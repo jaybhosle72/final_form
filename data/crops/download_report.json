@@ -1,0 +1,223 @@
+{
+  "timestamp": "2026-10-09T18:00:40.638268",
+  "total_datasets": 12,
+  "successful_downloads": 12,
+  "failed_downloads": 0,
+  "destination_base_directory": "C:\\project\\antigravity\\finalform\\data\\crops",
+  "datasets": [
+    {
+      "dataset_handle": "sakshi21122001/crop-recommendation-with-water-data",
+      "label": "Crop Recommendation with Water Data",
+      "destination_folder": "C:\\project\\antigravity\\finalform\\data\\crops\\crop_recommendation_water",
+      "status": "SUCCESS",
+      "cache_path": "C:\\Users\\l\\.cache\\kagglehub\\datasets\\sakshi21122001\\crop-recommendation-with-water-data\\versions\\1",
+      "copied_files": [
+        {
+          "file_name": "crops1.csv",
+          "size_bytes": 166520,
+          "format": "csv"
+        }
+      ],
+      "skipped_files": [],
+      "error_message": null,
+      "timestamp": "2026-10-09T18:00:03.550221"
+    },
+    {
+      "dataset_handle": "dsmlindian/crop-data-maharashtra",
+      "label": "Crop Data Maharashtra",
+      "destination_folder": "C:\\project\\antigravity\\finalform\\data\\crops\\maharashtra_crop_data",
+      "status": "SUCCESS",
+      "cache_path": "C:\\Users\\l\\.cache\\kagglehub\\datasets\\dsmlindian\\crop-data-maharashtra\\versions\\1",
+      "copied_files": [
+        {
+          "file_name": "Crop_recommendation_konkan_maharashtra.csv",
+          "size_bytes": 150034,
+          "format": "csv"
+        }
+      ],
+      "skipped_files": [],
+      "error_message": null,
+      "timestamp": "2026-10-09T18:00:07.445025"
+    },
+    {
+      "dataset_handle": "sushilyeotiwad/crop-recommendation-dataset",
+      "label": "Crop Recommendation Dataset",
+      "destination_folder": "C:\\project\\antigravity\\finalform\\data\\crops\\crop_recommendation",
+      "status": "SUCCESS",
+      "cache_path": "C:\\Users\\l\\.cache\\kagglehub\\datasets\\sushilyeotiwad\\crop-recommendation-dataset\\versions\\2",
+      "copied_files": [
+        {
+          "file_name": "Crop_Recommendation.csv",
+          "size_bytes": 144837,
+          "format": "csv"
+        }
+      ],
+      "skipped_files": [],
+      "error_message": null,
+      "timestamp": "2026-10-09T18:00:11.680455"
+    },
+    {
+      "dataset_handle": "mayankmohapatra77/crop-and-fertilizer-dataset",
+      "label": "Crop and Fertilizer Dataset",
+      "destination_folder": "C:\\project\\antigravity\\finalform\\data\\crops\\crop_fertilizer",
+      "status": "SUCCESS",
+      "cache_path": "C:\\Users\\l\\.cache\\kagglehub\\datasets\\mayankmohapatra77\\crop-and-fertilizer-dataset\\versions\\1",
+      "copied_files": [
+        {
+          "file_name": "CropRecommendation_Fertilizer_Corrected (3).csv",
+          "size_bytes": 177742,
+          "format": "csv"
+        }
+      ],
+      "skipped_files": [],
+      "error_message": null,
+      "timestamp": "2026-10-09T18:00:13.140147"
+    },
+    {
+      "dataset_handle": "irakozekelly/fertilizer-prediction",
+      "label": "Fertilizer Prediction",
+      "destination_folder": "C:\\project\\antigravity\\finalform\\data\\crops\\fertilizer_prediction",
+      "status": "SUCCESS",
+      "cache_path": "C:\\Users\\l\\.cache\\kagglehub\\datasets\\irakozekelly\\fertilizer-prediction\\versions\\1",
+      "copied_files": [
+        {
+          "file_name": "Fertilizer Prediction.csv",
+          "size_bytes": 3868731,
+          "format": "csv"
+        }
+      ],
+      "skipped_files": [],
+      "error_message": null,
+      "timestamp": "2026-10-09T18:00:15.220745"
+    },
+    {
+      "dataset_handle": "vedikasd/crop-data-for-yield-and-recommendation-analysis",
+      "label": "Crop Data for Yield & Recommendation Analysis",
+      "destination_folder": "C:\\project\\antigravity\\finalform\\data\\crops\\crop_yield_recommendation",
+      "status": "SUCCESS",
+      "cache_path": "C:\\Users\\l\\.cache\\kagglehub\\datasets\\vedikasd\\crop-data-for-yield-and-recommendation-analysis\\versions\\1",
+      "copied_files": [
+        {
+          "file_name": "crop_data.csv",
+          "size_bytes": 25579,
+          "format": "csv"
+        }
+      ],
+      "skipped_files": [],
+      "error_message": null,
+      "timestamp": "2026-10-09T18:00:18.755308"
+    },
+    {
+      "dataset_handle": "vishvavardhanbhasham/crop-recommendation-with-medicine",
+      "label": "Crop Recommendation with Medicine",
+      "destination_folder": "C:\\project\\antigravity\\finalform\\data\\crops\\crop_medicine_recommendation",
+      "status": "SUCCESS",
+      "cache_path": "C:\\Users\\l\\.cache\\kagglehub\\datasets\\vishvavardhanbhasham\\crop-recommendation-with-medicine\\versions\\1",
+      "copied_files": [
+        {
+          "file_name": "Crop_Recm_Data.csv",
+          "size_bytes": 1580904,
+          "format": "csv"
+        }
+      ],
+      "skipped_files": [],
+      "error_message": null,
+      "timestamp": "2026-10-09T18:00:21.303390"
+    },
+    {
+      "dataset_handle": "aniketkumaraugustya/soil-type-dataset",
+      "label": "Soil Type Dataset",
+      "destination_folder": "C:\\project\\antigravity\\finalform\\data\\crops\\soil_type",
+      "status": "SUCCESS",
+      "cache_path": "C:\\Users\\l\\.cache\\kagglehub\\datasets\\aniketkumaraugustya\\soil-type-dataset\\versions\\1",
+      "copied_files": [
+        {
+          "file_name": "soil_with_crop_recommendations.csv",
+          "size_bytes": 478441,
+          "format": "csv"
+        }
+      ],
+      "skipped_files": [],
+      "error_message": null,
+      "timestamp": "2026-10-09T18:00:24.933745"
+    },
+    {
+      "dataset_handle": "sashankgarg23/crop-dataset",
+      "label": "Crop Dataset",
+      "destination_folder": "C:\\project\\antigravity\\finalform\\data\\crops\\crop_dataset",
+      "status": "SUCCESS",
+      "cache_path": "C:\\Users\\l\\.cache\\kagglehub\\datasets\\sashankgarg23\\crop-dataset\\versions\\2",
+      "copied_files": [
+        {
+          "file_name": "merged_crop_dataset.csv",
+          "size_bytes": 372752,
+          "format": "csv"
+        },
+        {
+          "file_name": "standardized_crops.csv",
+          "size_bytes": 421393,
+          "format": "csv"
+        }
+      ],
+      "skipped_files": [],
+      "error_message": null,
+      "timestamp": "2026-10-09T18:00:28.918605"
+    },
+    {
+      "dataset_handle": "javakhan/crops-npk-data-set",
+      "label": "Crops NPK Data Set",
+      "destination_folder": "C:\\project\\antigravity\\finalform\\data\\crops\\crop_npk",
+      "status": "SUCCESS",
+      "cache_path": "C:\\Users\\l\\.cache\\kagglehub\\datasets\\javakhan\\crops-npk-data-set\\versions\\1",
+      "copied_files": [
+        {
+          "file_name": "sensor_Crop_Dataset (1).csv",
+          "size_bytes": 2957302,
+          "format": "csv"
+        }
+      ],
+      "skipped_files": [],
+      "error_message": null,
+      "timestamp": "2026-10-09T18:00:31.438311"
+    },
+    {
+      "dataset_handle": "sanketgondaliya/fertilizer",
+      "label": "Fertilizer Dataset",
+      "destination_folder": "C:\\project\\antigravity\\finalform\\data\\crops\\fertilizer",
+      "status": "SUCCESS",
+      "cache_path": "C:\\Users\\l\\.cache\\kagglehub\\datasets\\sanketgondaliya\\fertilizer\\versions\\1",
+      "copied_files": [
+        {
+          "file_name": "Fertilizer Prediction.csv",
+          "size_bytes": 3857,
+          "format": "csv"
+        }
+      ],
+      "skipped_files": [],
+      "error_message": null,
+      "timestamp": "2026-10-09T18:00:34.783090"
+    },
+    {
+      "dataset_handle": "ziya07/agricultural-nutrient-loss-dataset",
+      "label": "Agricultural Nutrient Loss Dataset",
+      "destination_folder": "C:\\project\\antigravity\\finalform\\data\\crops\\nutrient_loss",
+      "status": "SUCCESS",
+      "cache_path": "C:\\Users\\l\\.cache\\kagglehub\\datasets\\ziya07\\agricultural-nutrient-loss-dataset\\versions\\2",
+      "copied_files": [
+        {
+          "file_name": "AgroFertilizerLoss.csv",
+          "size_bytes": 2361176,
+          "format": "csv"
+        },
+        {
+          "file_name": "AgroFertilizerLossF.csv",
+          "size_bytes": 2397096,
+          "format": "csv"
+        }
+      ],
+      "skipped_files": [],
+      "error_message": null,
+      "timestamp": "2026-10-09T18:00:36.471958"
+    }
+  ]
+}

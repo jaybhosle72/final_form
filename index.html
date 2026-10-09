@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climate-Aware Credit Risk Assessment | NABARD Agriculture Finance</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Climate-Aware Agricultural Credit Risk Assessment System for NABARD — Phase 2 Environmental Telemetry Audit.">
+  <meta name="keywords" content="NABARD, Credit Risk, Climate Risk, Agriculture Finance, NASA Landsat NDVI, Open-Meteo Weather, SoilGrids">
+
+  <!-- External Stylesheets, Chart.js & Icons -->
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="navbar" role="banner">
+    <a href="#/dashboard" class="brand" aria-label="NABARD Climate-Aware Credit Risk Assessment Homepage">
+      <div class="brand-logo" aria-hidden="true">
+        <i data-lucide="sprout"></i>
+      </div>
+      <div class="brand-text">
+        <h1>NABARD Credit Risk System</h1>
+        <p>Climate-Aware Agriculture Finance</p>
+      </div>
+    </a>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs" id="mainNav" role="tablist" aria-label="Main Navigation">
+      <a href="#/dashboard" class="nav-tab active" data-route="dashboard" role="tab" id="tab-link-dashboard" aria-selected="true" aria-controls="tab-dashboard">
+        <i data-lucide="layout-dashboard"></i> Dashboard
+      </a>
+      <a href="#/loans" class="nav-tab" data-route="loans" role="tab" id="tab-link-loans" aria-selected="false" aria-controls="tab-loans">
+        <i data-lucide="file-spreadsheet"></i> Loan Records
+      </a>
+      <a href="#/crops" class="nav-tab" data-route="crops" role="tab" id="tab-link-crops" aria-selected="false" aria-controls="tab-crops">
+        <i data-lucide="database"></i> Agricultural Datasets
+      </a>
+      <a href="#/climate" class="nav-tab" data-route="climate" role="tab" id="tab-link-climate" aria-selected="false" aria-controls="tab-climate">
+        <i data-lucide="cloud-sun"></i> Climate Data
+      </a>
+      <a href="#/risk" class="nav-tab" data-route="risk" role="tab" id="tab-link-risk" aria-selected="false" aria-controls="tab-risk">
+        <i data-lucide="shield-alert"></i> Risk Assessment
+      </a>
+      <a href="#/officer" class="nav-tab" data-route="officer" role="tab" id="tab-link-officer" aria-selected="false" aria-controls="tab-officer" style="display: none;">
+        <i data-lucide="building"></i> Officer Portal
+      </a>
+    </nav>
+
+    <!-- Auth Profile / Login Button Container -->
+    <div id="navAuthContainer" style="margin-left: auto; display: flex; align-items: center; margin-right: 1rem;"></div>
+
+    <!-- Mobile Navigation Menu Toggle -->
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <i data-lucide="menu"></i>
+    </button>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="main-container" id="mainContent" role="main">
+
+    <!-- PAGE 1: DASHBOARD VIEW -->
+    <section id="tab-dashboard" class="tab-content active" role="tabpanel" aria-labelledby="tab-link-dashboard">
+      <div class="page-header">
+        <h2 class="page-title"><i data-lucide="layout-dashboard"></i> Climate-Aware Credit Risk Assessment</h2>
+        <p class="page-subtitle">
+          A modern institutional framework evaluating climate resilience and agricultural credit risk across farming portfolios in India.
+        </p>
+      </div>
+
+      <!-- Farmer Personalized Dashboard Card (Populated when farmer is logged in) -->
+      <div id="farmerDashboardContainer" class="card" style="display: none; background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%); border: 1px solid #86efac; margin-bottom: 2rem;">
+        <div class="card-header" style="border-bottom: 1px solid #bbf7d0;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 44px; height: 44px; background: #0d9488; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+              <i data-lucide="user-check"></i>
+            </div>
+            <div>
+              <h3 class="card-title" style="color: #0f766e; margin: 0;">Farmer Profile & Account Dashboard</h3>
+              <p style="margin: 0; font-size: 0.8rem; color: var(--text-muted);" id="dashFarmerVerifiedBadge">🟢 KCC Account Verified & Aadhaar Linked</p>
+            </div>
+          </div>
+          <a href="#/loans" onclick="if(window.prefillLoanApplicationForm) window.prefillLoanApplicationForm();" class="btn-primary" style="padding: 8px 16px; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            <i data-lucide="file-plus"></i> Apply for Agricultural Loan
+          </a>
+        </div>
+
+        <div class="grid-4col" style="gap: 1rem; margin-top: 1rem;">
+          
+          <!-- Farmer Profile Info -->
+          <div style="background: #ffffff; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Farmer Name & ID</div>
+            <div style="font-size: 1.15rem; font-weight: 800; color: var(--text-main);" id="dashFarmerName">Ramesh Patil</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: #0d9488;" id="dashFarmerId">DEMO001</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;" id="dashFarmerLocation">Dharwad, Karnataka</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);" id="dashFarmerPhone">+91 98765 43201</div>
+          </div>
+
+          <!-- KCC Bank Account -->
+          <div style="background: #ffffff; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Kisan Credit Card (KCC) Bank</div>
+            <div style="font-size: 0.95rem; font-weight: 700; color: #0f766e;" id="dashBankName">State Bank of India</div>
+            <div style="font-size: 0.82rem; font-family: monospace; color: var(--text-main);" id="dashBankAcctNo">XXXX-XXXX-1540</div>
+            <div style="font-size: 1.1rem; font-weight: 800; color: #0d9488; margin-top: 4px;" id="dashBankBalance">₹37,750</div>
+          </div>
+
+          <!-- Credit Score & Repayment -->
+          <div style="background: #ffffff; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">CIBIL Credit Score</div>
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--cyan-hover); line-height: 1;" id="dashCibilScore">720</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Repayment Status: <span style="font-weight: 700; color: #10b981;" id="dashRepaymentStatus">Regular</span></div>
+          </div>
+
+          <!-- Active Application Status -->
+          <div style="background: #ffffff; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Application Status</div>
+            <div style="margin-top: 6px;">
+              <span id="dashAppStatusBadge" class="badge badge-teal" style="font-size: 0.9rem; padding: 6px 12px;">Submitted</span>
+            </div>
+            <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 8px;">Review Queue: Bank Officer Desk</div>
+          </div>
+
+        </div>
+
+        <!-- Submitted Applications Table -->
+        <div style="margin-top: 1.25rem;">
+          <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px;"><i data-lucide="file-spreadsheet"></i> My Submitted Loan Applications</h4>
+          <div style="overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); background: #ffffff;">
+            <table class="data-table" style="width: 100%; border-collapse: collapse;">
+              <thead>
+                <tr>
+                  <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">Application ID</th>
+                  <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">Requested Amount</th>
+                  <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">Loan Purpose</th>
+                  <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">Crop & Land</th>
+                  <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">Status</th>
+                  <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">Officer Review Notes</th>
+                </tr>
+              </thead>
+              <tbody id="dashApplicationsTableBody">
+                <tr>
+                  <td colspan="6" style="text-align: center; padding: 1.5rem; color: var(--text-muted);">
+                    No active loan applications submitted yet. Click "Apply for Agricultural Loan" above.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <!-- Agricultural Datasets Summary Card -->
+      <div class="card" style="background: linear-gradient(135deg, #f0fdf4 0%, #e6fffa 100%); border: 1px solid #99f6e4; margin-bottom: 2rem;">
+        <div class="card-header" style="border-bottom: 1px solid #ccfbf1;">
+          <h3 class="card-title" style="color: #0f766e;"><i data-lucide="database"></i> Agricultural Datasets Overview (Kaggle Ingestion Complete)</h3>
+          <span class="badge badge-teal"><i data-lucide="check-circle"></i> 12 Datasets Ingested</span>
+        </div>
+        <div class="grid-4col" style="gap: 1rem; margin-top: 1rem;">
+          <div style="background: #ffffff; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+            <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Catalogued Datasets</div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: #0f766e;" id="dashTotalDatasets">12 Datasets</div>
+            <div style="font-size: 0.72rem; color: var(--text-muted);">14 Data Files</div>
+          </div>
+          <div style="background: #ffffff; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+            <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Total Records Ingested</div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: var(--cyan-hover);" id="dashTotalRecords">186,676 Rows</div>
+            <div style="font-size: 0.72rem; color: var(--text-muted);">100% Ingested</div>
+          </div>
+          <div style="background: #ffffff; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+            <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Crop Categories</div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: #0d9488;" id="dashCropCategories">45 Crops</div>
+            <div style="font-size: 0.72rem; color: var(--text-muted);">NPK & Yield Profiles</div>
+          </div>
+          <div style="background: #ffffff; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+            <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Soil & Fertilizer Data</div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: #6366f1;" id="dashSoilTypes">Active</div>
+            <div style="font-size: 0.72rem; color: var(--text-muted);">NPK & Classification</div>
+          </div>
+        </div>
+        <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <p style="font-size: 0.85rem; color: #115e59; margin: 0;">Includes Kaggle crop recommendation, Maharashtra production, fertilizer prediction, soil types, NPK ratios, and nutrient loss datasets.</p>
+          <a href="#/crops" class="btn-primary" style="padding: 6px 14px; font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            <i data-lucide="external-link"></i> Explore Datasets Viewer
+          </a>
+        </div>
+      </div>
+
+      <!-- Foundational Placeholder Section -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><i data-lucide="compass"></i> Project Purpose & Institutional Objectives</h3>
+        </div>
+        <div class="grid-2col">
+          <div>
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Why Climate-Aware Credit Risk?</h4>
+            <p style="font-size: 0.9rem; color: var(--text-body); margin-bottom: 1rem; line-height: 1.6;">
+              Traditional credit scoring models rely heavily on historical financial collateral and past repayment records. However, increasing climate volatility—such as unseasonal monsoons, heatwaves, and prolonged droughts—directly impacts crop yields and farmer repayment capacities.
+            </p>
+            <p style="font-size: 0.9rem; color: var(--text-body); line-height: 1.6;">
+              This system aims to bridge agricultural finance with climate intelligence, providing NABARD and institutional lenders with a transparent, climate-adjusted risk evaluation model.
+            </p>
+          </div>
+          <div>
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Key System Capabilities (Roadmap)</h4>
+            <ul style="padding-left: 1.25rem; font-size: 0.88rem; color: var(--text-body); line-height: 1.8;">
+              <li><strong>Loan Record Management:</strong> Centralized dataset containing farmer demographics, loan amounts, and crop choices.</li>
+              <li><strong>Agronomic & Climate Telemetry:</strong> Integration of temperature, rainfall deficit, and satellite vegetation indices.</li>
+              <li><strong>Machine Learning Risk Engine:</strong> Predictive yield modeling, default probability (PD), and expected loss (EL).</li>
+              <li><strong>Explainable AI (SHAP):</strong> Transparent factor-by-factor risk breakdowns for credit officers.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2: LOAN RECORDS VIEW -->
+    <section id="tab-loans" class="tab-content" role="tabpanel" aria-labelledby="tab-link-loans">
+      <div class="page-header">
+        <h2 class="page-title"><i data-lucide="file-spreadsheet"></i> Loan Records Management</h2>
+        <p class="page-subtitle">
+          Foundational layout for managing agricultural loan records and farmer credit portfolios.
+        </p>
+      </div>
+
+      <!-- Dataset Warning Notice -->
+      <div class="warning-alert">
+        <div class="warning-alert-title"><i data-lucide="alert-triangle"></i> Dataset Synthetic Notice & Disclaimers</div>
+        <div class="warning-alert-text">
+          The reference dataset <code>synthetic_agricultural_loan_repayment_100_farmers.csv</code> is organized in the project <code>data/</code> folder for future development. It consists strictly of synthetic demonstration records for system testing and must <strong>NOT</strong> be interpreted as actual farmer, bank, or NABARD loan records.
+        </div>
+      </div>
+
+      <!-- Dataset Table Placeholder -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><i data-lucide="database"></i> Loan Records Dataset Placeholder</h3>
+          <span class="badge badge-slate"><i data-lucide="lock"></i> Integration Pending</span>
+        </div>
+
+        <div class="placeholder-box">
+          <div class="placeholder-icon">
+            <i data-lucide="table-properties"></i>
+          </div>
+          <h4 class="placeholder-title">Loan Dataset Management Table</h4>
+          <p class="placeholder-text">
+            The interactive loan records table, filtering controls, and repayment analysis features will be implemented in subsequent phases. Data from <code>synthetic_agricultural_loan_repayment_100_farmers.csv</code> remains untouched.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <span class="badge badge-teal"><i data-lucide="check"></i> File Location: <code>data/synthetic_agricultural_loan_repayment_100_farmers.csv</code></span>
+            <span class="badge badge-cyan"><i data-lucide="check"></i> 100 Synthetic Farmer Records</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comprehensive Multi-Section Loan Application Form Card -->
+      <div id="loanFormCard" class="card" style="margin-top: 1.5rem; border: 1px solid #0d9488;">
+        <div class="card-header" style="background: #f0fdf4; border-bottom: 1px solid #ccfbf1;">
+          <div>
+            <h3 class="card-title" style="color: #0f766e;"><i data-lucide="file-text"></i> Agricultural Credit Loan Application Form</h3>
+            <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: var(--text-muted);">Complete all required fields below. Fields with green badges are prefilled automatically from your verified profile.</p>
+          </div>
+          <span class="badge badge-teal">Official NABARD KCC Application</span>
+        </div>
+
+        <div id="loanSubmitAlert" class="info-alert" style="display: none; margin-bottom: 1rem;"></div>
+
+        <!-- Prefill Info Banner -->
+        <div class="info-alert" style="background: #e6fffa; border: 1px solid #99f6e4; color: #0d9488; margin: 1rem 0;">
+          <div style="font-size: 0.85rem; font-weight: 600;">
+            💡 <strong>Smart Prefill Active:</strong> Information from your dataset profile has been automatically retrieved. You do NOT need to re-enter verified profile data.
+          </div>
+        </div>
+
+        <form id="formSubmitFullLoan" style="padding: 0.5rem 0;">
+          
+          <!-- SECTION 1: PERSONAL & VERIFIED IDENTITY INFORMATION -->
+          <div style="margin-bottom: 1.5rem; background: #f8fafc; padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h4 style="margin: 0; font-size: 0.95rem; font-weight: 700; color: var(--text-main);"><i data-lucide="user-check"></i> Section 1: Personal & Identity Information</h4>
+              <span class="badge badge-teal"><i data-lucide="check-circle"></i> Retrieved from Profile</span>
+            </div>
+
+            <div class="grid-3col">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanApplicantName">Farmer Full Name *</label>
+                <input type="text" id="loanApplicantName" class="form-control" placeholder="Ramesh Patil" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanPhone">Mobile Contact Number *</label>
+                <input type="text" id="loanPhone" class="form-control" placeholder="+91 98765 43201" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label>Identity Verification Status</label>
+                <input type="text" class="form-control" value="🟢 KCC Verified & Aadhaar Linked" readonly style="background: #f0fdf4; color: #166534; font-weight: 700;">
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: FARM & AGRONOMIC INFORMATION -->
+          <div style="margin-bottom: 1.5rem; background: #f8fafc; padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h4 style="margin: 0; font-size: 0.95rem; font-weight: 700; color: var(--text-main);"><i data-lucide="sprout"></i> Section 2: Farm Location & Agronomic Details</h4>
+              <span class="badge badge-cyan">Agronomic Verification</span>
+            </div>
+
+            <div class="grid-3col" style="margin-bottom: 1rem;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanVillage">Village / Taluka *</label>
+                <input type="text" id="loanVillage" class="form-control" value="Dharwad Rural Sector 4" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanDistrict">District *</label>
+                <input type="text" id="loanDistrict" class="form-control" value="Dharwad" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanState">State *</label>
+                <input type="text" id="loanState" class="form-control" value="Karnataka" required>
+              </div>
+            </div>
+
+            <div class="grid-3col" style="margin-bottom: 1rem;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanCropType">Target Cultivation Crop *</label>
+                <input type="text" id="loanCropType" class="form-control" value="Cotton" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanAcres">Cultivated Land Area (Acres) *</label>
+                <input type="number" id="loanAcres" class="form-control" value="5.5" step="0.1" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanPrevYield">Previous Crop Yield (Tons/Ha)</label>
+                <input type="number" id="loanPrevYield" class="form-control" value="4.5" step="0.1">
+              </div>
+            </div>
+
+            <div class="grid-4col" style="margin-bottom: 0;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanSowingDate">Sowing Date *</label>
+                <input type="date" id="loanSowingDate" class="form-control" value="2026-06-15" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanHarvestDate">Expected Harvest Date *</label>
+                <input type="date" id="loanHarvestDate" class="form-control" value="2026-11-20" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanIrrigation">Irrigation Facility *</label>
+                <select id="loanIrrigation" class="form-control">
+                  <option value="Rainfed">Rainfed</option>
+                  <option value="Canal / Borewell" selected>Canal / Borewell</option>
+                  <option value="Drip Irrigation">Drip Irrigation</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanWaterSource">Primary Water Source *</label>
+                <select id="loanWaterSource" class="form-control">
+                  <option value="Borewell Grid" selected>Borewell Grid</option>
+                  <option value="District Canal Network">District Canal Network</option>
+                  <option value="Monsoon Rainfed">Monsoon Rainfed</option>
+                  <option value="River / Stream">River / Stream</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 3: LOAN FINANCIAL DETAILS -->
+          <div style="margin-bottom: 1.5rem; background: #f8fafc; padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h4 style="margin: 0; font-size: 0.95rem; font-weight: 700; color: var(--text-main);"><i data-lucide="indian-rupee"></i> Section 3: Loan Financial Details</h4>
+              <span class="badge badge-teal">Credit Terms</span>
+            </div>
+
+            <div class="grid-3col" style="margin-bottom: 1rem;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanAmount">Requested Loan Amount (₹) *</label>
+                <input type="number" id="loanAmount" class="form-control" value="150000" step="5000" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanTenure">Preferred Repayment Period (Months) *</label>
+                <input type="number" id="loanTenure" class="form-control" value="12" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanIncome">Est. Annual Farm Income (₹) *</label>
+                <input type="number" id="loanIncome" class="form-control" value="220000" step="1000" required>
+              </div>
+            </div>
+
+            <div class="grid-3col" style="margin-bottom: 0;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanPurpose">Loan Purpose *</label>
+                <select id="loanPurpose" class="form-control">
+                  <option value="Kisan Credit Card (KCC) Crop Input Purchase" selected>KCC Seeds & Fertilizer Input Purchase</option>
+                  <option value="Drip Irrigation Installation">Drip Irrigation Installation</option>
+                  <option value="Solar Pump & Equipment Purchase">Solar Pump & Equipment Purchase</option>
+                  <option value="Post-Harvest Storage & Processing">Post-Harvest Storage & Processing</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanRepaymentSource">Expected Repayment Source *</label>
+                <select id="loanRepaymentSource" class="form-control">
+                  <option value="Crop Harvest Sale Proceeds" selected>Crop Harvest Sale Proceeds</option>
+                  <option value="Dairy & Livestock Sale">Dairy & Livestock Sale</option>
+                  <option value="Secondary Farm Income">Secondary Farm Income</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanObligations">Other Existing Loan Obligations (₹)</label>
+                <input type="number" id="loanObligations" class="form-control" value="0">
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 4: SUPPORTING FARMING DOCUMENTS -->
+          <div style="margin-bottom: 1.5rem; background: #f8fafc; padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h4 style="margin: 0; font-size: 0.95rem; font-weight: 700; color: var(--text-main);"><i data-lucide="file-check"></i> Section 4: Supporting Farming Documents</h4>
+              <span class="badge badge-teal">Verified Document Status</span>
+            </div>
+
+            <div class="grid-2col">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="loanDocStatus">Land Ownership Record Status</label>
+                <input type="text" id="loanDocStatus" class="form-control" value="7/12 Pahani Record Verified in State Land Registry" readonly style="background: #f0fdf4; color: #166534; font-weight: 600;">
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label>Crop Sowing Certificate Status</label>
+                <input type="text" class="form-control" value="Gram Panchayat / Agriculture Officer Endorsed" readonly style="background: #f0fdf4; color: #166534; font-weight: 600;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button id="btnSubmitFullLoan" type="submit" class="btn-primary" style="width: 100%; padding: 12px; font-size: 1rem; font-weight: 700; background: linear-gradient(135deg, #0d9488 0%, #06b6d4 100%); border: none;">
+            <i data-lucide="send"></i> Submit Loan Application to Bank Officer Review Queue
+          </button>
+        </form>
+      </div>
+
+      <!-- Application Success Confirmation Screen Card -->
+      <div id="loanSuccessScreenCard" class="card" style="display: none; background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%); border: 2px solid #86efac; text-align: center; padding: 2.5rem; margin-top: 1.5rem;">
+        <div style="width: 70px; height: 70px; background: #10b981; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 1.25rem auto;">
+          <i data-lucide="check-circle-2"></i>
+        </div>
+        <h3 style="font-size: 1.6rem; font-weight: 800; color: #0f766e; margin-bottom: 8px;">Loan Application Submitted Successfully!</h3>
+        <p style="font-size: 0.95rem; color: var(--text-body); max-width: 600px; margin: 0 auto 1.5rem auto; line-height: 1.6;">
+          Your application has entered the <strong>NABARD Credit Officer Review Queue</strong>. Submission alone does not constitute loan approval. An officer will review climate risk analytics and issue a lending decision.
+        </p>
+
+        <div style="background: #ffffff; padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid #bbf7d0; max-width: 500px; margin: 0 auto 1.5rem auto; text-align: left;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Unique Application ID:</span>
+            <span style="font-size: 1rem; font-weight: 800; color: #0d9488;" id="succAppId">APP-2026-9551</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Farmer ID:</span>
+            <span style="font-size: 0.9rem; font-weight: 700;" id="succFarmerId">DEMO001</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Requested Amount:</span>
+            <span style="font-size: 0.95rem; font-weight: 700; color: #0f766e;" id="succAmount">₹1,50,000</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Review Queue Status:</span>
+            <span class="badge badge-teal">Submitted — Under Officer Review</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Submission Timestamp:</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted);" id="succTimestamp">--</span>
+          </div>
+        </div>
+
+        <button id="btnReturnToDashboard" class="btn-primary" style="padding: 10px 24px;">
+          <i data-lucide="layout-dashboard"></i> Return to My Farmer Dashboard
+        </button>
+      </div>
+    </section>
+
+    <!-- PAGE: AGRICULTURAL DATASETS & INSIGHTS VIEW -->
+    <section id="tab-crops" class="tab-content" role="tabpanel" aria-labelledby="tab-link-crops">
+      <div class="page-header">
+        <h2 class="page-title"><i data-lucide="database"></i> Agricultural Datasets & Agronomic Insights</h2>
+        <p class="page-subtitle">
+          Exploration of 12 Kaggle agricultural datasets ingested and catalogued for crop recommendations, soil types, NPK ratios, fertilizers, and yield metrics.
+        </p>
+      </div>
+
+      <!-- Ingestion Overview Cards Grid -->
+      <div class="grid-4col" style="margin-bottom: 1.5rem;">
+        <div class="card" style="padding: 1.1rem; margin-bottom: 0;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-bottom: 4px;">Ingested Datasets</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: var(--cyan-hover);" id="cropsStatTotalDatasets">12</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;">14 Data Files Catalogued</div>
+        </div>
+
+        <div class="card" style="padding: 1.1rem; margin-bottom: 0;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-bottom: 4px;">Total Records Ingested</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #0d9488;" id="cropsStatTotalRecords">186,676</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;">100% Validated & Indexed</div>
+        </div>
+
+        <div class="card" style="padding: 1.1rem; margin-bottom: 0;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-bottom: 4px;">Crop Profiles</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #6366f1;">45 Categories</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;">Water & NPK Ratios</div>
+        </div>
+
+        <div class="card" style="padding: 1.1rem; margin-bottom: 0;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-bottom: 4px;">Ingestion Status</div>
+          <div style="font-size: 1.2rem; font-weight: 800; color: #10b981;">🟢 Active & Fully Loaded</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;">Local Storage (finalform/data/crops/)</div>
+        </div>
+      </div>
+
+      <!-- Dataset Explorer Card -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><i data-lucide="sliders"></i> Dataset Explorer & Interactive Table Viewer</h3>
+          <span class="badge badge-teal" id="cropDatasetMetaBadge">Crop Recommendation & Water Requirements</span>
+        </div>
+
+        <div class="grid-2col" style="margin-bottom: 1rem; align-items: center;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="cropDatasetSelect">Select Dataset to Inspect</label>
+            <select id="cropDatasetSelect" class="form-control">
+              <option value="crop_recommendation_water">crop_recommendation_water — sakshi21122001/crop-recommendation-with-water-data</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="cropSearchInput">Search Filter</label>
+            <div style="position: relative;">
+              <input type="text" id="cropSearchInput" class="form-control" placeholder="Search by crop, soil type, district, fertilizer...">
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Table Container -->
+        <div style="overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); margin-bottom: 1rem;">
+          <table class="data-table" style="width: 100%; border-collapse: collapse;">
+            <thead id="cropTableHead">
+              <tr>
+                <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">Col 1</th>
+                <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">Col 2</th>
+              </tr>
+            </thead>
+            <tbody id="cropTableBody">
+              <tr>
+                <td colspan="8" style="text-align: center; padding: 2rem; color: var(--text-muted);">
+                  Loading records...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Table Pagination Controls -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div style="font-size: 0.85rem; color: var(--text-muted);" id="cropPageIndicator">
+            Page 1 of 1 (0 preview records)
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button id="btnCropPrevPage" class="btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;">
+              <i data-lucide="chevron-left"></i> Previous Page
+            </button>
+            <button id="btnCropNextPage" class="btn-secondary" style="padding: 6px 14px; font-size: 0.85rem;">
+              Next Page <i data-lucide="chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agronomic Charts Grid -->
+      <div class="grid-2col">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><i data-lucide="bar-chart-3"></i> Crop NPK Nutrient Requirements (kg/ha)</h3>
+            <span class="badge badge-cyan">Aggregated Kaggle Sample Profile</span>
+          </div>
+          <div style="height: 280px; position: relative;">
+            <canvas id="chartCropNPK"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><i data-lucide="pie-chart"></i> Soil Texture & Type Distribution</h3>
+            <span class="badge badge-teal">Classification Breakdown</span>
+          </div>
+          <div style="height: 280px; position: relative;">
+            <canvas id="chartSoilDistribution"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Provenance & Disclaimers Card -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><i data-lucide="shield"></i> Dataset Provenance & Research License Disclaimers</h3>
+        </div>
+        <div style="background: #f8fafc; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+          <p style="font-size: 0.85rem; color: var(--text-body); line-height: 1.6; margin-bottom: 0.5rem;">
+            <strong>Data Provenance Notice:</strong> All 12 datasets displayed on this page are sourced directly from Kaggle open datasets under CC0 / Public Domain / MIT licenses for research and academic demonstration.
+          </p>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+            <strong>Disclaimer:</strong> Static Kaggle agricultural datasets provide baseline soil nutrient, fertilizer, crop suitability, and historical district production context. They do <strong>NOT</strong> represent real-time IoT sensor telemetry or institutional credit score decisions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3: CLIMATE DATA VIEW (AUDITED TELEMETRY ACTIVE) -->
+    <section id="tab-climate" class="tab-content" role="tabpanel" aria-labelledby="tab-link-climate">
+      <div class="page-header">
+        <h2 class="page-title"><i data-lucide="cloud-sun"></i> Climate & Agricultural Telemetry</h2>
+        <p class="page-subtitle">
+          Real environmental data telemetry from Open-Meteo Weather, NASA / USGS Landsat-8 & 9 30m Satellite Telemetry, and ISRIC SoilGrids REST v2.0.
+        </p>
+      </div>
+
+      <!-- Error Banner -->
+      <div id="climateErrorBanner" class="warning-alert" style="display: none;"></div>
+
+      <!-- Telemetry Control Panel Card -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><i data-lucide="sliders"></i> Location & Date Controls</h3>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <span id="statusOverall" class="badge badge-teal">🟢 Operational</span>
+            <span id="statusOpenMeteo" class="badge badge-teal">Open-Meteo: 🟢 Connected</span>
+            <span id="statusSentinel" class="badge badge-teal">NASA Landsat: 🟢 Active (30m Public Access)</span>
+            <span id="statusSoilGrids" class="badge badge-teal">SoilGrids: 🟢 Connected</span>
+          </div>
+        </div>
+
+        <div class="grid-4col" style="align-items: flex-end;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="climateDistrictPreset">District Preset</label>
+            <select id="climateDistrictPreset" class="form-control">
+              <option value="dharwad" selected>Dharwad, Karnataka</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <label>Latitude & Longitude</label>
+            <div style="display: flex; gap: 6px;">
+              <input type="number" id="climateLat" class="form-control" value="15.4589" step="0.0001" placeholder="Lat">
+              <input type="number" id="climateLng" class="form-control" value="75.0078" step="0.0001" placeholder="Lng">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <label>Date Range (Start - End)</label>
+            <div style="display: flex; gap: 6px;">
+              <input type="date" id="climateStartDate" class="form-control">
+              <input type="date" id="climateEndDate" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <button id="btnFetchClimateTelemetry" class="btn-primary">
+              <i data-lucide="refresh-cw"></i> Fetch Environmental Telemetry
+            </button>
+          </div>
+        </div>
+
+        <div style="margin-top: 1rem; font-size: 0.82rem; color: var(--text-muted);" id="climateLastUpdated">
+          Retrieved at --:--:-- | Location: 15.4589°N, 75.0078°E (Dharwad, Karnataka)
+        </div>
+      </div>
+
+      <!-- Real Environmental Metrics Grid -->
+      <div class="grid-4col" style="margin-bottom: 1.5rem;">
+        
+        <div class="card" style="padding: 1.1rem; margin-bottom: 0;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-bottom: 4px;">Cumulative Rainfall</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: var(--cyan-hover);" id="valTotalRain">-- mm</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 8px;" id="metaWeatherSource">Source: Open-Meteo ERA5 Reanalysis</div>
+        </div>
+
+        <div class="card" style="padding: 1.1rem; margin-bottom: 0;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-bottom: 4px;">Avg Max Temperature</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: var(--rose);" id="valTempMax">--°C</div>
+          <div style="font-size: 0.78rem; color: var(--rose); margin-top: 4px;">Heatwave Days (≥35°C): <span id="valHeatwaveDays">-- Days</span></div>
+          <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 8px;">Source: Open-Meteo API</div>
+        </div>
+
+        <div class="card" style="padding: 1.1rem; margin-bottom: 0;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-bottom: 4px;">NASA Landsat 30m NDVI & EVI</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #0d9488;" id="valLatestNDVI">0.72</div>
+          <div style="font-size: 0.78rem; color: #0f766e; margin-top: 4px;" id="valVegStatus">Healthy Green Canopy (30m)</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 8px;" id="metaSatelliteSource">Source: NASA / USGS Landsat-8 & 9 OLI</div>
+        </div>
+
+        <div class="card" style="padding: 1.1rem; margin-bottom: 0;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-bottom: 4px;">Soil Texture (0-5 cm Topsoil)</div>
+          <div style="font-size: 1.4rem; font-weight: 800; color: var(--text-main);" id="valSoilTexture">--</div>
+          <div style="font-size: 0.78rem; color: var(--text-body); margin-top: 4px;">SOC: <span id="valSoilSOC">--</span> \| pH: <span id="valSoilpH">--</span></div>
+          <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 8px;" id="metaSoilSource">Source: ISRIC SoilGrids REST v2.0</div>
+        </div>
+
+      </div>
+
+      <!-- Environmental Telemetry Charts Grid -->
+      <div class="grid-2col">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><i data-lucide="cloud-rain"></i> Open-Meteo Weather Telemetry (Rainfall & Temp)</h3>
+            <span class="badge badge-cyan">ERA5 Reanalysis Model</span>
+          </div>
+          <div style="height: 260px; position: relative;">
+            <canvas id="chartWeatherTelemetry"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><i data-lucide="globe"></i> NASA / USGS Landsat-8 & 9 Satellite Vegetation Index (NDVI & EVI)</h3>
+            <span class="badge badge-teal">30m Spatial Optical Resolution (Open Access)</span>
+          </div>
+          <div style="height: 260px; position: relative;">
+            <canvas id="chartSatelliteTelemetry"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Origin & Limitation Disclaimers Card -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><i data-lucide="shield"></i> Data Origin Transparency & Limitation Badges</h3>
+        </div>
+        <div class="grid-3col">
+          <div style="background: #f8fafc; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="font-weight: 700; font-size: 0.88rem; color: var(--text-main); margin-bottom: 4px;">☁️ Open-Meteo Weather</div>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">
+              Historical weather observations are retrieved from ERA5-Land reanalysis models. Direct ground station measurements may vary.
+            </p>
+          </div>
+          <div style="background: #f8fafc; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="font-weight: 700; font-size: 0.88rem; color: var(--text-main); margin-bottom: 4px;">🛰️ NASA / USGS Landsat-8 & 9</div>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">
+              Optical satellite scenes (30m spatial resolution) track surface reflectance NDVI & EVI vegetation trajectories from open USGS Earth science archives (no API keys required).
+            </p>
+          </div>
+          <div style="background: #f8fafc; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="font-weight: 700; font-size: 0.88rem; color: var(--text-main); margin-bottom: 4px;">🌱 ISRIC SoilGrids v2.0</div>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">
+              Mapped spatial machine learning estimates (250m resolution), NOT real-time sensor measurements from individual farmer fields.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 5: RISK ASSESSMENT VIEW (ENABLED & DATASET INTEGRATED) -->
+    <section id="tab-risk" class="tab-content" role="tabpanel" aria-labelledby="tab-link-risk">
+      <div class="page-header">
+        <h2 class="page-title"><i data-lucide="shield-check"></i> Climate-Aware Credit Risk Assessment Engine</h2>
+        <p class="page-subtitle">
+          Institutional credit risk evaluation integrating 100 borrower loan applications with 12 Kaggle agricultural dataset NPK/soil benchmarks & Open-Meteo/SoilGrids environmental telemetry.
+        </p>
+      </div>
+
+      <!-- Active Alert -->
+      <div class="info-alert" style="background: #f0fdf4; border: 1px solid #86efac; border-left: 4px solid #10b981; margin-bottom: 1.5rem;">
+        <div class="info-alert-title" style="color: #15803d;"><i data-lucide="check-circle-2"></i> Risk Assessment Engine Active</div>
+        <div class="info-alert-text" style="color: #166534;">
+          Risk scoring, Probability of Default (PD), Expected Loss (EL), Debt Service Coverage (DSCR), and SHAP explainability are fully enabled using data collected from the 12 Kaggle agricultural datasets and 100 borrower records.
+        </div>
+      </div>
+
+      <!-- Borrower Selection & Risk Control Card -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><i data-lucide="user-check"></i> Select Borrower Loan Application to Evaluate</h3>
+          <span class="badge badge-teal">100 Borrower Dataset Active</span>
+        </div>
+
+        <div class="grid-2col" style="margin-bottom: 1.25rem;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="riskBorrowerSelect">Borrower Application Record</label>
+            <select id="riskBorrowerSelect" class="form-control">
+              <option value="DEMO001">DEMO001 — Pune, Maharashtra | Pulses (₹182,000)</option>
+            </select>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: flex-end;">
+            <button id="btnRunRiskAssessment" class="btn-primary" style="flex: 1; padding: 10px 16px;">
+              <i data-lucide="shield-check"></i> Evaluate Credit Risk
+            </button>
+            <button id="btnEvaluateBatchPortfolio" class="btn-secondary" style="flex: 1; padding: 10px 16px;">
+              <i data-lucide="layers"></i> Evaluate Entire Portfolio (100 Borrowers)
+            </button>
+          </div>
+        </div>
+
+        <!-- Hidden inputs mapped dynamically from borrower choice -->
+        <input type="hidden" id="riskDistrict" value="Dharwad">
+        <input type="hidden" id="riskState" value="Karnataka">
+        <input type="hidden" id="riskCrop" value="Cotton">
+        <input type="hidden" id="riskAcres" value="5.0">
+        <input type="hidden" id="riskLoanAmount" value="200000">
+        <input type="hidden" id="riskLoanTerm" value="12">
+        <input type="hidden" id="riskInterestRate" value="8.5">
+        <input type="hidden" id="riskIrrigation" value="Rainfed">
+      </div>
+
+      <!-- DUAL-PILLAR RISK CLASSIFICATION & CALIBRATION HEADER CARD -->
+      <div class="card" style="margin-bottom: 1.5rem; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border: 1px solid var(--border-subtle);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-bottom: 1rem;">
+          <div>
+            <div style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">OVERALL RISK CLASSIFICATION</div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-top: 4px;">
+              <span id="valOverallRiskBadge" class="badge badge-teal" style="font-size: 1.1rem; padding: 6px 14px; font-weight: 800;">
+                <i data-lucide="shield-check"></i> LOW OVERALL RISK
+              </span>
+              <span id="valModelCalibrationBadge" class="badge badge-purple" style="font-size: 0.75rem; padding: 4px 10px;" title="Uncalibrated score prototype label per institutional risk model guidelines">
+                ⚠️ PROTOTYPE RISK SCORE (UNCALIBRATED)
+              </span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem;">
+            <div style="background: #ffffff; padding: 10px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+              <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700;">CLIMATE RISK PILLAR</div>
+              <span id="valClimateRiskBadge" class="badge badge-cyan" style="margin-top: 4px; font-weight: 700;">Moderate Climate Risk</span>
+            </div>
+
+            <div style="background: #ffffff; padding: 10px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+              <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700;">FINANCIAL REPAYMENT PILLAR</div>
+              <span id="valFinancialRiskBadge" class="badge badge-teal" style="margin-top: 4px; font-weight: 700;">Low Financial Risk</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PLAIN LANGUAGE RISK NARRATIVE SUMMARY -->
+        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 1rem; border-radius: var(--radius-sm); color: #166534; font-size: 0.88rem; line-height: 1.6;" id="riskNarrativeBox">
+          <strong>📋 Plain Language Risk Summary:</strong> Loading detailed natural language evaluation...
+        </div>
+      </div>
+
+      <!-- Score Card & Metrics Grid -->
+      <div class="grid-3col" style="margin-bottom: 1.5rem;">
+        
+        <!-- Climate Credit Score Card -->
+        <div class="card" style="padding: 1.25rem; margin-bottom: 0; background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 700;">CLIMATE-CREDIT RATING SCORE</span>
+            <span id="valRiskDecisionBadge" class="badge badge-teal"><i data-lucide="check"></i> APPROVED</span>
+          </div>
+          <div style="font-size: 2.8rem; font-weight: 800; color: #0d9488; line-height: 1;" id="valClimateCreditScore">720</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">Scale: 300 (High Risk) to 900 (Excellent)</div>
+          
+          <div style="background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; margin-top: 12px;">
+            <div id="valScoreProgressBar" style="width: 70%; height: 100%; background: linear-gradient(90deg, #06b6d4, #0d9488); border-radius: 4px;"></div>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-body); margin-top: 10px; line-height: 1.4;" id="valRiskDecisionReason">
+            Strong repayment capacity with low climate risk exposure.
+          </p>
+        </div>
+
+        <!-- Financial & Default Metrics -->
+        <div class="card" style="padding: 1.25rem; margin-bottom: 0;">
+          <div style="font-size: 0.82rem; color: var(--text-muted); font-weight: 700; margin-bottom: 8px;">REPAYMENT ESTIMATE & DEFAULT METRICS</div>
+          
+          <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Est. Repayment Score:</span>
+            <span style="font-size: 0.95rem; font-weight: 700; color: #0d9488;" id="valRepaymentProb">89.5%</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Est. Probability of Default (PD):</span>
+            <span style="font-size: 0.95rem; font-weight: 700; color: var(--rose);" id="valRiskPD">10.5%</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Expected Loss (EL ₹):</span>
+            <span style="font-size: 0.95rem; font-weight: 700; color: #d97706;" id="valRiskExpectedLoss">₹6,370</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Debt Coverage Ratio (DSCR):</span>
+            <span style="font-size: 0.95rem; font-weight: 700; color: #0d9488;" id="valRiskDSCR">1.45x</span>
+          </div>
+        </div>
+
+        <!-- Data Origin & Agronomic Context Badges -->
+        <div class="card" style="padding: 1.25rem; margin-bottom: 0;">
+          <div style="font-size: 0.82rem; color: var(--text-muted); font-weight: 700; margin-bottom: 8px;">DATA PROVENANCE & SOURCES</div>
+          
+          <div style="margin-bottom: 6px; font-size: 0.82rem;">
+            <span style="color: var(--text-muted);">Farmer & Financials Source:</span>
+            <div style="font-weight: 600; color: var(--teal-hover);" id="valAgroSource">synthetic_agricultural_loan_repayment_100_farmers.csv</div>
+          </div>
+          <div style="margin-bottom: 6px; font-size: 0.82rem;">
+            <span style="color: var(--text-muted);">Agronomic Benchmarks:</span>
+            <div style="font-weight: 600;" id="valAgroNPK">Kaggle 12 Agricultural Datasets Catalog</div>
+          </div>
+          <div style="margin-bottom: 6px; font-size: 0.82rem;">
+            <span style="color: var(--text-muted);">Open-Meteo Weather Telemetry:</span>
+            <div style="font-weight: 600;" id="valTelemRain">Realtime ERA5 Reanalysis / Cache</div>
+          </div>
+          <div style="font-size: 0.82rem;">
+            <span style="color: var(--text-muted);">SoilGrids Taxonomy & pH:</span>
+            <div style="font-weight: 600;" id="valTelemSoil">ISRIC SoilGrids REST v2.0</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MAJOR POSITIVE AND NEGATIVE RISK FACTORS GRID -->
+      <div class="grid-2col" style="margin-bottom: 1.5rem;">
+        
+        <!-- POSITIVE RISK DRIVERS CARD -->
+        <div class="card">
+          <div class="card-header" style="border-bottom: 1px solid #bbf7d0;">
+            <h3 class="card-title" style="color: #15803d;"><i data-lucide="trending-up"></i> Major Positive Risk Factors</h3>
+            <span class="badge badge-teal">Score Enhancers</span>
+          </div>
+          <div id="riskPositiveFactorsContainer" style="font-size: 0.85rem; color: var(--text-body);">
+            Loading positive factors...
+          </div>
+        </div>
+
+        <!-- NEGATIVE RISK DRIVERS CARD -->
+        <div class="card">
+          <div class="card-header" style="border-bottom: 1px solid #fecdd3;">
+            <h3 class="card-title" style="color: #be123c;"><i data-lucide="trending-down"></i> Major Negative Risk Factors</h3>
+            <span class="badge badge-rose">Risk Stressors</span>
+          </div>
+          <div id="riskNegativeFactorsContainer" style="font-size: 0.85rem; color: var(--text-body);">
+            Loading negative factors...
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SHAP Feature Importance & Directives Grid -->
+      <div class="grid-2col" style="margin-bottom: 1.5rem;">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><i data-lucide="bar-chart-2"></i> SHAP Explainable AI Score Drivers</h3>
+            <span class="badge badge-cyan">Factor Attribution</span>
+          </div>
+          <div style="height: 260px; position: relative;">
+            <canvas id="chartSHAPExplainability"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><i data-lucide="clipboard-check"></i> Suggested Officer Next Steps & Directives</h3>
+            <span class="badge badge-teal">Decision Support Guidance</span>
+          </div>
+          <ul id="riskDirectivesList" style="list-style: none; padding-left: 0; font-size: 0.88rem; color: var(--text-body); line-height: 1.8;">
+            <li><i data-lucide="check-circle-2" style="color: var(--teal-primary); margin-right: 6px;"></i> Mandatory enrollment in PM Fasal Bima Yojana Weather-Based Crop Insurance.</li>
+            <li><i data-lucide="check-circle-2" style="color: var(--teal-primary); margin-right: 6px;"></i> Apply Soil Health Card recommended N-P-K fertilizer ratio for optimal yield.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Record Bank Officer Lending Decision Card -->
+      <div class="card" style="margin-bottom: 1.5rem; border: 1px solid #0d9488; background: #f0fdf4;">
+        <div class="card-header" style="border-bottom: 1px solid #ccfbf1;">
+          <h3 class="card-title" style="color: #0f766e;"><i data-lucide="check-square"></i> Record Official Bank Officer Lending Decision</h3>
+          <span class="badge badge-teal">Bank Officer Action</span>
+        </div>
+
+        <div id="officerDecisionAlert" class="info-alert" style="display: none; margin-bottom: 1rem;"></div>
+
+        <form id="formRecordDecision">
+          <div class="grid-3col" style="margin-bottom: 1rem;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="officerFarmerId">Target Farmer ID</label>
+              <input type="text" id="officerFarmerId" class="form-control" value="DEMO001" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="officerDecisionSelect">Officer Lending Decision</label>
+              <select id="officerDecisionSelect" class="form-control">
+                <option value="APPROVED" selected>APPROVED — Grant Full Sanction</option>
+                <option value="CONDITIONAL APPROVAL">CONDITIONAL APPROVAL — Require Insurance/Co-signer</option>
+                <option value="REJECTED">REJECTED — High Climate/Credit Risk</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="officerApprovedAmount">Approved Amount (₹)</label>
+              <input type="number" id="officerApprovedAmount" class="form-control" value="150000" step="5000">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="officerNotes">Officer Decision Explanation & Risk Rationale</label>
+            <textarea id="officerNotes" class="form-control" rows="2" placeholder="Record credit analysis rationale, climate risk factors evaluated, and approval conditions..." required>Approved based on high CIBIL score (720), strong DSCR (1.45x), and PMFBY weather insurance enrollment.</textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="padding: 10px 20px;">
+            <i data-lucide="check-circle-2"></i> Record Official Lending Decision
+          </button>
+        </form>
+      </div>
+
+      <!-- Batch Portfolio Risk Assessment Card -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><i data-lucide="layers"></i> Portfolio-Wide Risk Assessment (100 Borrower Dataset)</h3>
+          <span class="badge badge-slate">Batch Risk Evaluation</span>
+        </div>
+
+        <div id="batchPortfolioSummaryBox" style="margin-bottom: 1rem;"></div>
+
+        <div style="overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+          <table class="data-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr>
+                <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">Farmer ID</th>
+                <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">District</th>
+                <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">Crop</th>
+                <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">Loan Amount</th>
+                <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">Credit Score</th>
+                <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">Default PD (%)</th>
+                <th style="padding: 10px 14px; background: #f8fafc; text-align: left;">Risk Decision</th>
+              </tr>
+            </thead>
+            <tbody id="batchRiskTableBody">
+              <tr>
+                <td colspan="7" style="text-align: center; padding: 2rem; color: var(--text-muted);">
+                  Click "Evaluate Entire Portfolio" above to run batch credit risk evaluation across all 100 borrowers.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    <!-- PAGE 6: BANK OFFICER DASHBOARD & LOAN REVIEW WORKFLOW -->
+    <section id="tab-officer" class="tab-content" role="tabpanel" aria-labelledby="tab-link-officer">
+      <div class="page-header">
+        <h2 class="page-title"><i data-lucide="building"></i> Bank Officer Credit Review Portal</h2>
+        <p class="page-subtitle">
+          Professional agricultural credit risk dashboard for authorized bank officers. Perform dual-pillar risk file reviews, evaluate climate telemetry, and log validated decision audit trails.
+        </p>
+      </div>
+
+      <!-- Executive Dashboard Summary Cards Grid -->
+      <div class="grid-6col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+        <div class="card" style="padding: 1rem; margin-bottom: 0;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Total Applications</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: var(--text-main);" id="valOfficerTotalApps">100</div>
+          <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 4px;">Dataset + Submissions</div>
+        </div>
+
+        <div class="card" style="padding: 1rem; margin-bottom: 0; border-left: 4px solid #06b6d4;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Awaiting Review</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #06b6d4;" id="valOfficerAwaitingReview">--</div>
+          <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 4px;">In Officer Review Queue</div>
+        </div>
+
+        <div class="card" style="padding: 1rem; margin-bottom: 0; border-left: 4px solid #0d9488;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Under Review</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #0d9488;" id="valOfficerUnderReview">--</div>
+          <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 4px;">Active Credit Analysis</div>
+        </div>
+
+        <div class="card" style="padding: 1rem; margin-bottom: 0; border-left: 4px solid #6366f1;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Risk Assessed</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #6366f1;" id="valOfficerRiskAssessed">100%</div>
+          <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 4px;">Dual-Pillar Evaluated</div>
+        </div>
+
+        <div class="card" style="padding: 1rem; margin-bottom: 0; border-left: 4px solid #d97706;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Add. Info Required</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #d97706;" id="valOfficerAddInfo">--</div>
+          <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 4px;">Pending Documents</div>
+        </div>
+
+        <div class="card" style="padding: 1rem; margin-bottom: 0; border-left: 4px solid #10b981;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Approved / Rejected</div>
+          <div style="font-size: 1.4rem; font-weight: 800; color: #10b981;" id="valOfficerApproveReject">-- / --</div>
+          <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 4px;">Logged Officer Decisions</div>
+        </div>
+      </div>
+
+      <!-- Officer Analytics Charts Grid -->
+      <div class="grid-2col" style="margin-bottom: 1.5rem;">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><i data-lucide="pie-chart"></i> Portfolio Risk-Level Distribution</h3>
+            <span class="badge badge-teal">Overall Risk Breakdown</span>
+          </div>
+          <div style="height: 240px; position: relative;">
+            <canvas id="chartOfficerRiskDist"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"><i data-lucide="trending-up"></i> Regional Climate Risk & Precipitation Trends</h3>
+            <span class="badge badge-cyan">District Telemetry Trends</span>
+          </div>
+          <div style="height: 240px; position: relative;">
+            <canvas id="chartOfficerClimateTrends"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Application Queue Search & Filter Controls Card -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><i data-lucide="list-filter"></i> Searchable & Filterable Application Queue</h3>
+          <span class="badge badge-teal">Live Officer Review Desk</span>
+        </div>
+
+        <div class="grid-3col" style="margin-bottom: 1rem;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="officerQueueSearch">Search Applications</label>
+            <input type="text" id="officerQueueSearch" class="form-control" placeholder="Search by App ID, Farmer ID, Name, District, Crop...">
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="officerStatusFilter">Filter by Application Status</label>
+            <select id="officerStatusFilter" class="form-control">
+              <option value="All" selected>All Application Statuses</option>
+              <option value="Submitted">Submitted (Awaiting Review)</option>
+              <option value="Under Review">Under Review</option>
+              <option value="Additional Information Required">Additional Info Required</option>
+              <option value="Approved">Approved</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="officerRiskFilter">Filter by Overall Risk Level</label>
+            <select id="officerRiskFilter" class="form-control">
+              <option value="All" selected>All Risk Levels</option>
+              <option value="Low">Low Risk</option>
+              <option value="Moderate">Moderate Risk</option>
+              <option value="High">High Risk</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Application Queue Data Table -->
+        <div style="overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);">
+          <table class="data-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr>
+                <th style="padding: 10px 12px; background: #f8fafc; text-align: left;">Application ID</th>
+                <th style="padding: 10px 12px; background: #f8fafc; text-align: left;">Farmer Borrower</th>
+                <th style="padding: 10px 12px; background: #f8fafc; text-align: left;">Location</th>
+                <th style="padding: 10px 12px; background: #f8fafc; text-align: left;">Crop & Land</th>
+                <th style="padding: 10px 12px; background: #f8fafc; text-align: left;">Amount (₹)</th>
+                <th style="padding: 10px 12px; background: #f8fafc; text-align: left;">Status</th>
+                <th style="padding: 10px 12px; background: #f8fafc; text-align: left;">Climate Risk</th>
+                <th style="padding: 10px 12px; background: #f8fafc; text-align: left;">Financial Risk</th>
+                <th style="padding: 10px 12px; background: #f8fafc; text-align: left;">Overall Risk</th>
+                <th style="padding: 10px 12px; background: #f8fafc; text-align: center;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="officerQueueTableBody">
+              <tr>
+                <td colspan="10" style="text-align: center; padding: 2rem; color: var(--text-muted);">
+                  <i data-lucide="loader-2" class="spin"></i> Loading application queue...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Comprehensive Application Review File Modal -->
+  <div id="officerAppModalOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(4px); z-index: 9999; align-items: center; justify-content: center; padding: 1rem;">
+    <div style="background: #ffffff; width: 100%; max-width: 900px; max-height: 90vh; border-radius: var(--radius-md); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; overflow: hidden;">
+      
+      <!-- Modal Header -->
+      <div style="background: linear-gradient(135deg, #0d9488 0%, #06b6d4 100%); padding: 1.25rem 1.5rem; color: #ffffff; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <h3 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #ffffff;" id="modalAppHeaderTitle">Application Review File: APP-2026-9814</h3>
+            <span id="modalAppHeaderStatusBadge" class="badge badge-warning" style="background: #ffffff; color: #0d9488; font-weight: 800;">Submitted</span>
+          </div>
+          <p style="margin: 2px 0 0 0; font-size: 0.8rem; opacity: 0.9;" id="modalAppHeaderSubtitle">Farmer: Ramesh Patil (DEMO001) | Location: Dharwad, Karnataka</p>
+        </div>
+        <button id="btnCloseOfficerAppModal" style="background: none; border: none; color: #ffffff; font-size: 1.6rem; cursor: pointer; padding: 0; line-height: 1;">&times;</button>
+      </div>
+
+      <!-- Modal Content Body -->
+      <div style="padding: 1.5rem; overflow-y: auto; flex: 1;" id="modalAppBodyContent">
+        
+        <!-- SECTION 1: FARMER PROFILE & FARM DETAILS -->
+        <div style="margin-bottom: 1.25rem; background: #f8fafc; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+          <h4 style="margin: 0 0 8px 0; font-size: 0.92rem; color: var(--text-main); font-weight: 700;"><i data-lucide="user"></i> Section 1: Farmer Profile & Farm Details</h4>
+          <div class="grid-3col" style="font-size: 0.85rem;">
+            <div>Farmer Name: <strong id="fileFarmerName">--</strong></div>
+            <div>Farmer ID: <strong id="fileFarmerId">--</strong></div>
+            <div>Phone: <strong id="filePhone">+91 XXXXX XXXXX</strong></div>
+            <div>Location: <strong id="fileLocation">--</strong></div>
+            <div>Identity Status: <span class="badge badge-teal" id="fileIdentityStatus">Verified</span></div>
+            <div>Land Document: <span class="badge badge-teal" id="fileLandDocStatus">7/12 Record Verified</span></div>
+          </div>
+        </div>
+
+        <!-- SECTION 2 & 3 & 4: FINANCIALS, CIBIL & OBLIGATIONS -->
+        <div style="margin-bottom: 1.25rem;" class="grid-3col">
+          <div style="background: #ffffff; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 700;">SECTION 2: BANK ACCOUNT (UNMASKED)</div>
+            <div style="font-size: 0.9rem; font-weight: 700; color: #0f766e; margin-top: 4px;" id="fileBankName">State Bank of India</div>
+            <div style="font-size: 0.85rem; font-family: monospace;" id="fileAcctNo">XXXX-XXXX-1540</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">Balance: <strong id="fileAcctBal" style="color: #0d9488;">₹37,750</strong></div>
+          </div>
+
+          <div style="background: #ffffff; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 700;">SECTION 3: CREDIT SCORE & REPAYMENT</div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: var(--cyan-hover); margin-top: 2px;" id="fileCibilScore">720</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted);">History: <strong id="fileRepayHist" style="color: #10b981;">Repaid on time</strong></div>
+          </div>
+
+          <div style="background: #ffffff; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: 700;">SECTION 4: EXISTING OBLIGATIONS</div>
+            <div style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); margin-top: 4px;" id="fileOverdue">₹0 Overdue</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted);">DPD: <strong id="fileDPD">0 Days</strong></div>
+          </div>
+        </div>
+
+        <!-- SECTION 5 & 6: CLIMATE TELEMETRY, SATELLITE NDVI & YIELD -->
+        <div style="margin-bottom: 1.25rem;" class="grid-2col">
+          <div style="background: #f8fafc; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <h4 style="margin: 0 0 6px 0; font-size: 0.88rem; font-weight: 700; color: var(--text-main);"><i data-lucide="cloud-rain"></i> Section 5: Climate & Weather Telemetry</h4>
+            <div style="font-size: 0.82rem; line-height: 1.6;">
+              <div>Rainfall: <strong id="fileRainfall">336.7 mm</strong> (Deficit: <strong id="fileRainDeficit">-15.8%</strong>)</div>
+              <div>Avg Max Temp: <strong id="fileTemp">31.2°C</strong> (Heatwave Days: <strong id="fileHeatwave">1 Day</strong>)</div>
+              <div>Location Coords: <span style="color: var(--text-muted);" id="fileCoords">15.4589°N, 75.0078°E</span></div>
+            </div>
+          </div>
+
+          <div style="background: #f8fafc; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <h4 style="margin: 0 0 6px 0; font-size: 0.88rem; font-weight: 700; color: var(--text-main);"><i data-lucide="sprout"></i> Section 6: Satellite NDVI & Agronomic Yield</h4>
+            <div style="font-size: 0.82rem; line-height: 1.6;">
+              <div>Satellite NDVI: <span class="badge badge-teal" id="fileNDVI">0.62 (Healthy Vegetation)</span></div>
+              <div>Agronomic Benchmark Yield: <strong id="fileBenchYield">4.5 Tons/ha</strong></div>
+              <div>Irrigation Infrastructure: <strong id="fileIrrigation">Drip Irrigation</strong></div>
+              <div>Soil Texture & pH: <strong id="fileSoil">Loam (pH 6.8)</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 7: DUAL-PILLAR RISK ASSESSMENT & PROTOTYPE REPAYMENT SCORE -->
+        <div style="margin-bottom: 1.25rem; background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%); padding: 1.1rem; border-radius: var(--radius-sm); border: 1px solid #86efac;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <h4 style="margin: 0; font-size: 0.92rem; font-weight: 800; color: #0f766e;"><i data-lucide="shield-check"></i> Section 7: Risk Assessment & Repayment Estimate</h4>
+            <span class="badge badge-purple" style="font-size: 0.72rem;">⚠️ PROTOTYPE RISK SCORE (UNCALIBRATED)</span>
+          </div>
+
+          <div class="grid-4col" style="font-size: 0.85rem; text-align: center; margin-bottom: 8px;">
+            <div style="background: #ffffff; padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Overall Risk</div>
+              <strong id="fileOverallRisk" style="font-size: 1rem; color: #0d9488;">LOW</strong>
+            </div>
+            <div style="background: #ffffff; padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Climate Risk</div>
+              <strong id="fileClimateRisk" style="font-size: 0.95rem; color: var(--text-main);">Moderate</strong>
+            </div>
+            <div style="background: #ffffff; padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Financial Risk</div>
+              <strong id="fileFinancialRisk" style="font-size: 0.95rem; color: var(--text-main);">Low</strong>
+            </div>
+            <div style="background: #ffffff; padding: 8px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Repayment Score</div>
+              <strong id="fileRepaymentScore" style="font-size: 1.05rem; color: #0d9488;">89.5%</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 8 & 9: RISK DRIVERS & MISSING DATA WARNINGS -->
+        <div style="margin-bottom: 1.25rem;" class="grid-2col">
+          <div style="background: #ffffff; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <h4 style="margin: 0 0 6px 0; font-size: 0.88rem; font-weight: 700; color: var(--text-main);"><i data-lucide="bar-chart-2"></i> Section 8: Main Positive & Negative Risk Drivers</h4>
+            <div id="fileRiskDriversList" style="font-size: 0.8rem; line-height: 1.5;">Loading drivers...</div>
+          </div>
+
+          <div style="background: #ffffff; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+            <h4 style="margin: 0 0 6px 0; font-size: 0.88rem; font-weight: 700; color: var(--text-main);"><i data-lucide="alert-triangle"></i> Section 9: Missing Data & Uncertainty Warnings</h4>
+            <div id="fileMissingDataList" style="font-size: 0.8rem; line-height: 1.5;">Loading warnings...</div>
+          </div>
+        </div>
+
+        <!-- SECTION 10: AUDIT TRAIL TIMELINE -->
+        <div style="margin-bottom: 1.5rem; background: #f8fafc; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+          <h4 style="margin: 0 0 8px 0; font-size: 0.92rem; font-weight: 700; color: var(--text-main);"><i data-lucide="history"></i> Section 10: Status History & Audit Log Timeline</h4>
+          <div id="fileAuditTrailTimeline" style="font-size: 0.82rem;">Loading audit history...</div>
+        </div>
+
+        <!-- OFFICER ACTION & DECISION SUBMISSION FORM -->
+        <div style="background: #f0fdf4; padding: 1.25rem; border-radius: var(--radius-sm); border: 1.5 solid #0d9488;">
+          <h4 style="margin: 0 0 10px 0; font-size: 1rem; font-weight: 800; color: #0f766e;"><i data-lucide="check-square"></i> Record Bank Officer Lending Action & Audit Entry</h4>
+          
+          <div id="modalOfficerAlertBox" class="info-alert" style="display: none; margin-bottom: 1rem;"></div>
+
+          <form id="formOfficerModalAction">
+            <div class="grid-2col" style="margin-bottom: 1rem;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="modalActionSelect">Officer Action / Status Transition</label>
+                <select id="modalActionSelect" class="form-control" required>
+                  <option value="mark_under_review">Mark as Under Review</option>
+                  <option value="request_additional_info">Request Additional Information</option>
+                  <option value="approve" selected>Approve Loan Application</option>
+                  <option value="reject">Reject Loan Application</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="modalApprovedAmount">Approved Amount (₹)</label>
+                <input type="number" id="modalApprovedAmount" class="form-control" value="150000" step="5000">
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="modalExplanationNotes">Officer Decision Rationale & Risk Explanation <span style="color: var(--rose);">*</span></label>
+              <textarea id="modalExplanationNotes" class="form-control" rows="3" placeholder="Provide mandatory officer rationale, climate risk factors evaluated, and conditions of approval..." required>Approved based on high CIBIL score (720), strong DSCR (1.45x), and PMFBY weather insurance enrollment.</textarea>
+            </div>
+
+            <button type="submit" id="btnSubmitModalOfficerAction" class="btn-primary" style="width: 100%; padding: 12px; font-weight: 700; background: linear-gradient(135deg, #0d9488 0%, #06b6d4 100%); border: none;">
+              <i data-lucide="check-circle-2"></i> Submit Officer Decision & Log Audit Record
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+    <!-- PAGE 7: DEDICATED FULL-SCREEN LOGIN PAGE (#/login) -->
+    <section id="tab-login" class="tab-content" role="tabpanel" aria-labelledby="tab-link-login">
+      <div style="max-width: 480px; margin: 2rem auto; padding: 0 1rem;">
+        
+        <div style="margin-bottom: 1.25rem;">
+          <a href="#/dashboard" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-weight: 600; color: #0d9488; font-size: 0.9rem;">
+            <i data-lucide="arrow-left"></i> Back to Home
+          </a>
+        </div>
+
+        <div class="card" style="padding: 2.25rem; border-radius: 12px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08); background: #ffffff;">
+          
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <div style="width: 52px; height: 52px; background: linear-gradient(135deg, #0d9488 0%, #06b6d4 100%); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 12px auto;">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin: 0 0 4px 0;">System Portal Login</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">NABARD Climate-Aware Agriculture Credit System</p>
+          </div>
+
+          <!-- Role Selection Buttons for Login -->
+          <div style="display: flex; gap: 8px; margin-bottom: 1.5rem; background: #f1f5f9; padding: 4px; border-radius: 8px;">
+            <button id="btnLoginRoleFarmer" class="btn-role-select active" type="button" style="flex: 1; padding: 10px; border: none; border-radius: 6px; font-weight: 700; font-size: 0.88rem; cursor: pointer; background: #ffffff; color: #0d9488; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+              🌾 Farmer Login
+            </button>
+            <button id="btnLoginRoleOfficer" class="btn-role-select" type="button" style="flex: 1; padding: 10px; border: none; border-radius: 6px; font-weight: 700; font-size: 0.88rem; cursor: pointer; background: transparent; color: var(--text-muted);">
+              🏦 Bank Officer Login
+            </button>
+          </div>
+
+          <div id="loginErrorAlert" class="warning-alert" style="display: none; margin-bottom: 1rem;"></div>
+          <div id="loginFarmerError" class="warning-alert" style="display: none; margin-bottom: 1rem;"></div>
+          <div id="loginOfficerError" class="warning-alert" style="display: none; margin-bottom: 1rem;"></div>
+
+          <!-- Google Sign-In Option -->
+          <div id="googleSignInContainer" style="margin-bottom: 1.25rem;">
+            <button id="btnGoogleSignIn" type="button" class="btn-google-auth" style="width: 100%; padding: 11px; font-weight: 700; background: #ffffff; color: #374151; border: 1px solid #d1d5db; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; transition: all 0.2s ease;">
+              <svg width="18" height="18" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              </svg>
+              <span>Continue with Google</span>
+            </button>
+          </div>
+
+          <div id="authDivider" style="display: flex; align-items: center; margin: 1.25rem 0; color: var(--text-muted); font-size: 0.78rem;">
+            <hr style="flex: 1; border: 0; border-top: 1px solid var(--border-subtle);">
+            <span style="padding: 0 8px; font-weight: 600;">OR LOGIN WITH CREDENTIALS</span>
+            <hr style="flex: 1; border: 0; border-top: 1px solid var(--border-subtle);">
+          </div>
+
+          <!-- Form 1: Farmer Login Form -->
+          <form id="formFarmerLogin">
+            <div class="form-group">
+              <label for="loginFarmerUser">Farmer Username / Phone</label>
+              <input type="text" id="loginFarmerUser" class="form-control" placeholder="e.g. farmer1" required>
+            </div>
+            <div class="form-group">
+              <label for="loginFarmerPwd">Password</label>
+              <input type="password" id="loginFarmerPwd" class="form-control" placeholder="••••••••" required>
+            </div>
+            <button type="submit" id="btnSubmitFarmerLogin" class="btn-primary" style="width: 100%; padding: 12px; font-weight: 700; margin-top: 8px;">
+              <i data-lucide="log-in"></i> Log In as Farmer
+            </button>
+
+            <!-- Demo Shortcuts -->
+            <div style="margin-top: 1.25rem; padding: 10px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px;">
+              <div style="font-size: 0.78rem; font-weight: 700; color: #166534; margin-bottom: 6px;">⚡ Quick Synthetic Demo Accounts (Development):</div>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <button type="button" class="btn-secondary btn-demo-login" data-user="farmer1" data-pwd="farmer123" data-type="farmer" style="padding: 4px 10px; font-size: 0.78rem; background: #ffffff;">
+                  Farmer 1 (Ramesh Patil)
+                </button>
+                <button type="button" class="btn-secondary btn-demo-login" data-user="farmer2" data-pwd="farmer123" data-type="farmer" style="padding: 4px 10px; font-size: 0.78rem; background: #ffffff;">
+                  Farmer 2 (Suresh Kumar)
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Form 2: Bank Officer Login Form -->
+          <form id="formOfficerLogin" style="display: none;">
+            <div class="form-group">
+              <label for="loginOfficerUser">Officer Username</label>
+              <input type="text" id="loginOfficerUser" class="form-control" placeholder="e.g. officer1" required>
+            </div>
+            <div class="form-group">
+              <label for="loginOfficerPwd">Password</label>
+              <input type="password" id="loginOfficerPwd" class="form-control" placeholder="••••••••" required>
+            </div>
+            <button type="submit" id="btnSubmitOfficerLogin" class="btn-primary" style="width: 100%; padding: 12px; font-weight: 700; background: #0f766e; margin-top: 8px;">
+              <i data-lucide="shield"></i> Log In as Bank Officer
+            </button>
+
+            <!-- Demo Officer Shortcuts -->
+            <div style="margin-top: 1.25rem; padding: 10px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px;">
+              <div style="font-size: 0.78rem; font-weight: 700; color: #1e40af; margin-bottom: 6px;">⚡ Quick Synthetic Demo Officer Accounts:</div>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <button type="button" class="btn-secondary btn-demo-login" data-user="officer1" data-pwd="officer123" data-type="officer" style="padding: 4px 10px; font-size: 0.78rem; background: #ffffff;">
+                  Officer 1 (Anil Deshmukh)
+                </button>
+                <button type="button" class="btn-secondary btn-demo-login" data-user="officer2" data-pwd="officer123" data-type="officer" style="padding: 4px 10px; font-size: 0.78rem; background: #ffffff;">
+                  Officer 2 (Priya Singh)
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 1.5rem 0 1rem 0;">
+
+          <div style="text-align: center; font-size: 0.9rem; color: var(--text-muted);">
+            Don't have an account? <a href="#/register" id="linkToRegister" style="color: #0d9488; font-weight: 700; text-decoration: none;">Register here</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 8: DEDICATED FULL-SCREEN REGISTRATION PAGE (#/register) -->
+    <section id="tab-register" class="tab-content" role="tabpanel" aria-labelledby="tab-link-register">
+      <div style="max-width: 520px; margin: 2rem auto; padding: 0 1rem;">
+        
+        <div style="margin-bottom: 1.25rem;">
+          <a href="#/dashboard" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-weight: 600; color: #0d9488; font-size: 0.9rem;">
+            <i data-lucide="arrow-left"></i> Back to Home
+          </a>
+        </div>
+
+        <div class="card" style="padding: 2.25rem; border-radius: 12px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08); background: #ffffff;">
+          
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <div style="width: 52px; height: 52px; background: linear-gradient(135deg, #06b6d4 0%, #0d9488 100%); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 12px auto;">
+              <i data-lucide="user-plus"></i>
+            </div>
+            <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin: 0 0 4px 0;">Create New Account</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Join NABARD Climate-Aware Agriculture Finance Network</p>
+          </div>
+
+          <!-- Role Selection Buttons for Registration -->
+          <div style="display: flex; gap: 8px; margin-bottom: 1.5rem; background: #f1f5f9; padding: 4px; border-radius: 8px;">
+            <button id="btnRegRoleFarmer" class="btn-role-select active" type="button" style="flex: 1; padding: 10px; border: none; border-radius: 6px; font-weight: 700; font-size: 0.88rem; cursor: pointer; background: #ffffff; color: #0d9488; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+              🌾 Farmer Registration
+            </button>
+            <button id="btnRegRoleOfficer" class="btn-role-select" type="button" style="flex: 1; padding: 10px; border: none; border-radius: 6px; font-weight: 700; font-size: 0.88rem; cursor: pointer; background: transparent; color: var(--text-muted);">
+              🏦 Bank Officer Registration
+            </button>
+          </div>
+
+          <div id="regErrorAlert" class="warning-alert" style="display: none; margin-bottom: 1rem;"></div>
+          <div id="regFarmerError" class="warning-alert" style="display: none; margin-bottom: 1rem;"></div>
+          <div id="regOfficerError" class="warning-alert" style="display: none; margin-bottom: 1rem;"></div>
+
+          <!-- Form 1: Farmer Registration Form -->
+          <form id="formFarmerRegister">
+            <div class="form-group">
+              <label for="regFarmerUser">Desired Username</label>
+              <input type="text" id="regFarmerUser" class="form-control" placeholder="e.g. farmer_dharwad" required>
+            </div>
+            <div class="form-group">
+              <label for="regFarmerPwd">Password</label>
+              <input type="password" id="regFarmerPwd" class="form-control" placeholder="At least 6 characters" required>
+            </div>
+            <div class="form-group">
+              <label for="regFarmerName">Full Name</label>
+              <input type="text" id="regFarmerName" class="form-control" placeholder="e.g. Ramesh Patil" required>
+            </div>
+            <div class="grid-2col" style="gap: 8px;">
+              <div class="form-group">
+                <label for="regFarmerDistrict">District</label>
+                <input type="text" id="regFarmerDistrict" class="form-control" value="Dharwad" required>
+              </div>
+              <div class="form-group">
+                <label for="regFarmerState">State</label>
+                <input type="text" id="regFarmerState" class="form-control" value="Karnataka" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="regFarmerPhone">Mobile Phone</label>
+              <input type="text" id="regFarmerPhone" class="form-control" value="+91 98765 00000" required>
+            </div>
+
+            <button type="submit" id="btnSubmitFarmerRegister" class="btn-primary" style="width: 100%; padding: 12px; font-weight: 700; background: #06b6d4; margin-top: 8px;">
+              <i data-lucide="user-plus"></i> Create Farmer Account
+            </button>
+          </form>
+
+          <!-- Form 2: Bank Officer Registration Form -->
+          <form id="formOfficerRegister" style="display: none;">
+            <div style="background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 10px; margin-bottom: 12px; font-size: 0.8rem; color: #92400e; display: flex; gap: 8px; align-items: flex-start;">
+              <i data-lucide="shield-alert" style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;"></i>
+              <div>
+                <strong>Administrative Authorization Required:</strong> Bank officer registration requires a valid Officer Authorization Invite Code.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="regOfficerUser">Officer Username</label>
+              <input type="text" id="regOfficerUser" class="form-control" placeholder="e.g. officer_deshmukh" required>
+            </div>
+            <div class="form-group">
+              <label for="regOfficerPwd">Password</label>
+              <input type="password" id="regOfficerPwd" class="form-control" placeholder="At least 6 characters" required>
+            </div>
+            <div class="form-group">
+              <label for="regOfficerName">Full Name & Official Title</label>
+              <input type="text" id="regOfficerName" class="form-control" placeholder="e.g. Anil Deshmukh (Credit Officer)" required>
+            </div>
+            <div class="form-group">
+              <label for="regOfficerDesignation">Designation / Regional Branch</label>
+              <input type="text" id="regOfficerDesignation" class="form-control" value="Senior Credit Officer - NABARD Regional Office" required>
+            </div>
+            <div class="form-group">
+              <label for="regOfficerInviteCode">Officer Invite / Authorization Code <span style="color: var(--rose);">*</span></label>
+              <input type="password" id="regOfficerInviteCode" class="form-control" placeholder="Enter Administrative Code (e.g. OFFICER_2026_ADMIN)" required>
+            </div>
+
+            <button type="submit" id="btnSubmitOfficerRegister" class="btn-primary" style="width: 100%; padding: 12px; font-weight: 700; background: #0f766e; margin-top: 8px;">
+              <i data-lucide="shield-check"></i> Register Bank Officer Account
+            </button>
+          </form>
+
+          <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 1.5rem 0 1rem 0;">
+
+          <div style="text-align: center; font-size: 0.9rem; color: var(--text-muted);">
+            Already have an account? <a href="#/login" id="linkToLogin" style="color: #0d9488; font-weight: 700; text-decoration: none;">Login here</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  <!-- Google OAuth Config Notice Modal -->
+  <div id="googleOauthModal" class="modal-overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 10000; align-items: center; justify-content: center;">
+    <div class="modal-content" style="background: #ffffff; border-radius: 12px; max-width: 520px; width: 90%; padding: 1.5rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem;">
+        <div style="width: 44px; height: 44px; background: #fef3c7; color: #d97706; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+          <i data-lucide="key-round"></i>
+        </div>
+        <div>
+          <h3 style="margin: 0; font-size: 1.15rem; color: #92400e;">Google OAuth Configuration Required</h3>
+          <p style="margin: 0; font-size: 0.8rem; color: var(--text-muted);">Environment variables missing</p>
+        </div>
+      </div>
+      
+      <p style="font-size: 0.88rem; color: #374151; line-height: 1.5; margin-bottom: 1rem;">
+        Google OAuth credentials (<code>GOOGLE_CLIENT_ID</code> & <code>GOOGLE_CLIENT_SECRET</code>) have not been configured in the backend environment yet.
+      </p>
+
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; font-size: 0.82rem; margin-bottom: 1rem; color: #334155;">
+        <strong>How to configure:</strong>
+        <ol style="margin: 6px 0 0 1.2rem; padding: 0;">
+          <li>Copy <code>.env.example</code> to <code>.env</code> in project root.</li>
+          <li>Set <code>GOOGLE_CLIENT_ID</code> and <code>GOOGLE_CLIENT_SECRET</code> from your Google Cloud Console.</li>
+          <li>Set <code>GOOGLE_OFFICER_EMAILS</code> to grant officer privileges to specific emails.</li>
+        </ol>
+      </div>
+
+      <p style="font-size: 0.82rem; color: #059669; font-weight: 600; margin-bottom: 1.25rem;">
+        💡 Development Testing: In the meantime, you can use the built-in development demo buttons on the login modal to log in as Farmer (farmer1) or Officer (officer1).
+      </p>
+
+      <div style="display: flex; justify-content: flex-end;">
+        <button type="button" class="btn-primary" onclick="document.getElementById('googleOauthModal').style.display='none';" style="padding: 8px 16px;">
+          Got it, Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Controllers -->
+  <script src="js/auth_controller.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/climate_controller.js"></script>
+  <script src="js/crop_insights_controller.js"></script>
+  <script src="js/risk_controller.js"></script>
+  <script src="js/officer_controller.js"></script>
+  <script>
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

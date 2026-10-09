@@ -1,0 +1,101 @@
+farmer_id,state,district,crop_type,farm_area_acres,irrigation_type,loan_id,loan_purpose,loan_amount_inr,estimated_annual_farm_income_inr,loan_term_months,annual_interest_rate_pct,previous_loan_count,previous_repayment_history,rainfall_deviation_pct,estimated_yield_change_pct,days_past_due,amount_overdue_inr,repayment_status,default_flag,data_type
+DEMO001,Maharashtra,Pune,Pulses,5.66,Mixed,LOAN001,Seasonal working capital,182000,120000,12,9.65,3,Occasional delay,34,11,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO002,Rajasthan,Jaipur,Onion,5.71,Rainfed,LOAN002,Seasonal working capital,150000,115000,18,8.98,4,Occasional delay,-23,-12,1,3000,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO003,Uttar Pradesh,Prayagraj,Rice,5.97,Rainfed,LOAN003,Equipment,60000,246000,24,9.79,5,Repeated delays,15,0,127,26000,Defaulted,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO004,Maharashtra,Amravati,Sugarcane,5.64,Drip,LOAN004,Seeds and fertilizers,183000,161000,24,8.52,4,Occasional delay,-10,-3,1,4000,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO005,Telangana,Warangal,Wheat,9.59,Borewell,LOAN005,Seeds and fertilizers,184000,427000,9,11.18,3,Repaid on time,-8,-6,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO006,Uttar Pradesh,Prayagraj,Sugarcane,6.96,Borewell,LOAN006,Equipment,93000,133000,9,12.47,3,Repaid on time,34,13,5,2000,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO007,Gujarat,Rajkot,Cotton,8.18,Borewell,LOAN007,Seasonal working capital,201000,332000,9,7.13,2,Occasional delay,-13,-13,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO008,Maharashtra,Solapur,Millet,2.42,Borewell,LOAN008,Post-harvest storage,125000,75000,18,7.11,3,Repaid on time,10,-15,33,71000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO009,Karnataka,Dharwad,Cotton,11.65,Drip,LOAN009,Irrigation,186000,388000,6,7.92,4,No previous loan,-23,-14,41,48000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO010,Telangana,Warangal,Wheat,8.83,Canal,LOAN010,Seeds and fertilizers,166000,334000,6,6.79,4,Repaid on time,5,4,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO011,Uttar Pradesh,Agra,Rice,7.34,Rainfed,LOAN011,Equipment,233000,277000,6,9.88,2,Repaid on time,-17,-10,5,5000,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO012,Karnataka,Belagavi,Maize,11.3,Borewell,LOAN012,Seeds and fertilizers,132000,306000,12,6.65,2,Repaid on time,-1,-7,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO013,Madhya Pradesh,Indore,Sugarcane,1.93,Borewell,LOAN013,Equipment,88000,78000,18,8.11,4,Occasional delay,13,17,82,33000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO014,Telangana,Warangal,Onion,4.28,Mixed,LOAN014,Post-harvest storage,90000,152000,24,6.81,4,Repaid on time,35,21,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO015,Maharashtra,Pune,Pulses,10.77,Mixed,LOAN015,Post-harvest storage,142000,310000,24,11.73,0,Occasional delay,17,20,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO016,Maharashtra,Amravati,Wheat,10.09,Rainfed,LOAN016,Seeds and fertilizers,65000,387000,6,11.94,0,Occasional delay,-42,-29,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO017,Punjab,Ludhiana,Wheat,3.3,Rainfed,LOAN017,Post-harvest storage,177000,73000,12,12.13,1,Occasional delay,-4,-16,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO018,Maharashtra,Pune,Onion,11.18,Canal,LOAN018,Seasonal working capital,93000,387000,24,12.97,0,Occasional delay,-20,-10,14,20000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO019,Uttar Pradesh,Agra,Rice,5.44,Mixed,LOAN019,Irrigation,159000,270000,24,7.26,4,Repaid on time,20,1,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO020,Maharashtra,Amravati,Soybean,7.55,Mixed,LOAN020,Equipment,161000,242000,12,12.57,3,Repaid on time,30,12,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO021,Punjab,Ludhiana,Pulses,9.93,Rainfed,LOAN021,Irrigation,40000,379000,24,12.95,2,Occasional delay,-34,-27,86,10000,Defaulted,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO022,Maharashtra,Pune,Sugarcane,1.33,Rainfed,LOAN022,Seeds and fertilizers,37000,51000,9,10.03,0,Occasional delay,20,13,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO023,Karnataka,Belagavi,Rice,3.38,Rainfed,LOAN023,Post-harvest storage,154000,109000,24,12.33,1,Repaid on time,-42,-15,10,32000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO024,Telangana,Warangal,Groundnut,11.77,Drip,LOAN024,Equipment,200000,469000,6,10.1,5,Occasional delay,14,3,1,4000,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO025,Uttar Pradesh,Agra,Maize,3.71,Rainfed,LOAN025,Seasonal working capital,133000,119000,18,9.16,3,Repaid on time,-27,-1,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO026,Punjab,Ludhiana,Maize,6.13,Rainfed,LOAN026,Equipment,145000,287000,24,10.93,5,Repaid on time,-29,-16,4,82000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO027,Karnataka,Belagavi,Groundnut,2.19,Borewell,LOAN027,Post-harvest storage,46000,93000,24,12.11,3,Repeated delays,-39,-18,86,29000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO028,Punjab,Ludhiana,Wheat,7.37,Rainfed,LOAN028,Irrigation,164000,176000,12,10.16,1,Repaid on time,-45,-47,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO029,Maharashtra,Amravati,Sugarcane,11.22,Rainfed,LOAN029,Seasonal working capital,51000,235000,9,8.84,2,Repaid on time,8,-3,1,1000,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO030,Madhya Pradesh,Indore,Pulses,4.25,Rainfed,LOAN030,Irrigation,58000,212000,9,10.37,2,Repaid on time,14,24,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO031,Maharashtra,Solapur,Soybean,11.85,Borewell,LOAN031,Irrigation,239000,261000,12,11.3,1,Repaid on time,23,-13,53,154000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO032,Madhya Pradesh,Indore,Millet,5.7,Rainfed,LOAN032,Post-harvest storage,232000,254000,24,8.49,2,No previous loan,-14,-5,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO033,Maharashtra,Nashik,Maize,8.05,Rainfed,LOAN033,Seeds and fertilizers,227000,153000,24,12.87,1,No previous loan,-26,-9,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO034,Maharashtra,Nashik,Rice,7.55,Drip,LOAN034,Seeds and fertilizers,79000,354000,24,11.9,0,No previous loan,9,0,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO035,Karnataka,Dharwad,Cotton,2.11,Borewell,LOAN035,Seasonal working capital,193000,83000,6,8.4,0,No previous loan,23,-7,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO036,Rajasthan,Jaipur,Sugarcane,7.66,Rainfed,LOAN036,Seasonal working capital,224000,323000,6,13.36,0,No previous loan,-15,-13,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO037,Gujarat,Rajkot,Sugarcane,2.34,Mixed,LOAN037,Seeds and fertilizers,93000,88000,6,10.06,3,Repaid on time,11,18,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO038,Maharashtra,Pune,Millet,3.84,Rainfed,LOAN038,Seeds and fertilizers,121000,149000,12,8.02,0,Repaid on time,33,4,5,2000,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO039,Madhya Pradesh,Indore,Onion,6.06,Rainfed,LOAN039,Irrigation,154000,226000,18,12.01,3,Repaid on time,11,7,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO040,Rajasthan,Jaipur,Sugarcane,6.49,Borewell,LOAN040,Seeds and fertilizers,224000,320000,12,8.7,2,Repaid on time,14,-3,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO041,Maharashtra,Nashik,Wheat,10.21,Rainfed,LOAN041,Seasonal working capital,88000,300000,24,12.29,2,Repaid on time,-31,-35,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO042,Maharashtra,Solapur,Cotton,2.05,Rainfed,LOAN042,Seeds and fertilizers,241000,106000,9,11.44,3,Occasional delay,-11,0,30,66000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO043,Uttar Pradesh,Prayagraj,Sugarcane,2.55,Rainfed,LOAN043,Post-harvest storage,213000,132000,18,9.64,5,Occasional delay,0,16,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO044,Uttar Pradesh,Prayagraj,Wheat,6.0,Rainfed,LOAN044,Seeds and fertilizers,66000,293000,9,9.93,2,No previous loan,6,10,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO045,Madhya Pradesh,Indore,Cotton,10.23,Borewell,LOAN045,Irrigation,171000,417000,18,8.87,4,No previous loan,16,-4,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO046,Uttar Pradesh,Prayagraj,Maize,6.4,Mixed,LOAN046,Seasonal working capital,157000,300000,12,7.23,5,Repaid on time,2,-5,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO047,Madhya Pradesh,Sehore,Rice,4.53,Rainfed,LOAN047,Seasonal working capital,31000,224000,12,8.45,4,Repaid on time,-9,-21,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO048,Punjab,Ludhiana,Groundnut,6.1,Drip,LOAN048,Irrigation,228000,259000,18,7.3,3,Repeated delays,5,-10,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO049,Punjab,Ludhiana,Maize,11.66,Mixed,LOAN049,Post-harvest storage,90000,501000,9,11.94,5,Repaid on time,15,-13,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO050,Karnataka,Dharwad,Soybean,5.35,Drip,LOAN050,Seeds and fertilizers,44000,197000,24,6.76,5,Occasional delay,-24,-1,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO051,Gujarat,Rajkot,Maize,8.76,Drip,LOAN051,Irrigation,220000,378000,6,12.51,2,No previous loan,19,1,56,122000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO052,Maharashtra,Nashik,Pulses,10.82,Borewell,LOAN052,Post-harvest storage,78000,508000,24,10.63,2,Repaid on time,18,3,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO053,Telangana,Warangal,Rice,1.66,Rainfed,LOAN053,Seasonal working capital,186000,75000,12,10.52,3,Repaid on time,35,11,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO054,Rajasthan,Kota,Wheat,11.04,Canal,LOAN054,Irrigation,55000,336000,9,9.67,2,No previous loan,-17,-3,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO055,Gujarat,Rajkot,Millet,9.2,Borewell,LOAN055,Seeds and fertilizers,89000,446000,9,11.7,2,Repaid on time,-26,-5,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO056,Madhya Pradesh,Indore,Groundnut,4.34,Rainfed,LOAN056,Seasonal working capital,222000,120000,18,9.57,1,Repaid on time,-25,-13,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO057,Maharashtra,Amravati,Groundnut,10.9,Drip,LOAN057,Equipment,67000,405000,18,9.53,1,Repaid on time,-37,-21,46,14000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO058,Maharashtra,Nashik,Wheat,1.44,Canal,LOAN058,Equipment,141000,41000,6,6.92,1,No previous loan,24,10,5,3000,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO059,Karnataka,Belagavi,Soybean,5.41,Rainfed,LOAN059,Irrigation,50000,256000,6,9.52,0,Repaid on time,-45,-34,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO060,Maharashtra,Amravati,Cotton,3.44,Canal,LOAN060,Seeds and fertilizers,179000,89000,24,9.73,1,Repaid on time,-26,-25,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO061,Madhya Pradesh,Indore,Rice,11.08,Rainfed,LOAN061,Equipment,67000,211000,6,10.63,0,Repaid on time,-37,-4,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO062,Telangana,Warangal,Sugarcane,2.54,Drip,LOAN062,Equipment,217000,68000,12,13.39,3,Repeated delays,0,24,14,137000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO063,Maharashtra,Pune,Maize,3.14,Canal,LOAN063,Post-harvest storage,96000,65000,18,11.58,5,Repaid on time,-43,-18,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO064,Madhya Pradesh,Indore,Rice,7.41,Rainfed,LOAN064,Irrigation,57000,308000,12,6.53,5,No previous loan,19,-7,52,13000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO065,Rajasthan,Kota,Groundnut,10.65,Borewell,LOAN065,Post-harvest storage,165000,291000,9,12.35,4,Repaid on time,-41,-12,60,48000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO066,Gujarat,Rajkot,Groundnut,7.6,Borewell,LOAN066,Seeds and fertilizers,114000,312000,12,13.38,1,Occasional delay,16,5,5,2000,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO067,Maharashtra,Nashik,Pulses,6.58,Canal,LOAN067,Equipment,46000,317000,9,7.75,3,Occasional delay,-14,-3,86,32000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO068,Maharashtra,Amravati,Soybean,8.99,Mixed,LOAN068,Post-harvest storage,110000,320000,18,10.49,2,Occasional delay,7,7,63,69000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO069,Karnataka,Belagavi,Wheat,3.01,Borewell,LOAN069,Equipment,30000,154000,18,8.73,5,Occasional delay,-15,-7,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO070,Karnataka,Dharwad,Wheat,11.27,Canal,LOAN070,Equipment,69000,347000,6,11.29,3,Repaid on time,17,11,1,1000,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO071,Maharashtra,Solapur,Wheat,9.21,Mixed,LOAN071,Equipment,88000,229000,12,6.82,5,Repaid on time,-30,-20,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO072,Rajasthan,Jaipur,Maize,1.95,Rainfed,LOAN072,Seeds and fertilizers,91000,86000,24,13.38,2,Occasional delay,17,19,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO073,Punjab,Ludhiana,Soybean,6.95,Rainfed,LOAN073,Seasonal working capital,215000,271000,12,12.46,2,No previous loan,-2,0,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO074,Madhya Pradesh,Indore,Groundnut,5.27,Drip,LOAN074,Seeds and fertilizers,199000,132000,6,7.2,2,Repeated delays,-12,-8,55,79000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO075,Maharashtra,Nashik,Onion,3.47,Borewell,LOAN075,Seeds and fertilizers,217000,166000,9,7.63,4,Repaid on time,-18,8,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO076,Uttar Pradesh,Prayagraj,Soybean,6.24,Borewell,LOAN076,Irrigation,146000,205000,6,9.87,3,No previous loan,-16,-1,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO077,Punjab,Ludhiana,Cotton,3.56,Rainfed,LOAN077,Seeds and fertilizers,52000,175000,24,10.22,0,Repaid on time,-19,5,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO078,Telangana,Warangal,Groundnut,6.0,Rainfed,LOAN078,Equipment,232000,178000,9,10.86,4,No previous loan,30,7,1,5000,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO079,Maharashtra,Amravati,Millet,5.65,Borewell,LOAN079,Seeds and fertilizers,26000,293000,18,7.57,1,No previous loan,-23,0,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO080,Gujarat,Rajkot,Maize,8.91,Canal,LOAN080,Seeds and fertilizers,173000,342000,24,7.74,1,Repaid on time,4,-16,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO081,Punjab,Ludhiana,Onion,10.79,Borewell,LOAN081,Seeds and fertilizers,248000,389000,18,11.67,4,Repaid on time,8,21,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO082,Uttar Pradesh,Agra,Sugarcane,10.95,Canal,LOAN082,Seasonal working capital,171000,325000,12,7.14,3,Repaid on time,-8,-3,1,3000,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO083,Madhya Pradesh,Indore,Wheat,4.39,Rainfed,LOAN083,Seasonal working capital,200000,207000,24,7.47,4,Occasional delay,-26,-11,25,139000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO084,Maharashtra,Amravati,Millet,8.63,Mixed,LOAN084,Irrigation,162000,230000,9,9.3,3,Repaid on time,-40,-3,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO085,Uttar Pradesh,Agra,Groundnut,7.6,Canal,LOAN085,Post-harvest storage,236000,357000,12,8.84,1,Repaid on time,-19,0,0,0,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO086,Gujarat,Rajkot,Soybean,11.75,Borewell,LOAN086,Irrigation,197000,516000,12,11.01,5,Repaid on time,5,19,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO087,Madhya Pradesh,Sehore,Onion,3.17,Drip,LOAN087,Seeds and fertilizers,219000,75000,6,7.47,2,Repaid on time,-45,-14,5,4000,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO088,Madhya Pradesh,Sehore,Onion,2.88,Rainfed,LOAN088,Post-harvest storage,120000,113000,24,7.47,5,Repeated delays,-22,-6,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO089,Maharashtra,Amravati,Maize,1.96,Drip,LOAN089,Seeds and fertilizers,65000,64000,18,13.44,3,Repaid on time,-1,9,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO090,Maharashtra,Pune,Maize,11.74,Rainfed,LOAN090,Irrigation,129000,381000,18,12.01,4,No previous loan,-16,-20,5,3000,Active - current,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO091,Madhya Pradesh,Sehore,Soybean,9.16,Drip,LOAN091,Seeds and fertilizers,136000,443000,9,10.24,1,Occasional delay,-34,-1,87,20000,Defaulted,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO092,Karnataka,Dharwad,Groundnut,1.09,Borewell,LOAN092,Equipment,210000,26000,24,10.27,4,No previous loan,-40,-28,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO093,Rajasthan,Kota,Pulses,3.61,Drip,LOAN093,Seeds and fertilizers,138000,157000,18,11.76,4,Repaid on time,-8,-27,97,35000,Defaulted,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO094,Maharashtra,Solapur,Wheat,5.2,Mixed,LOAN094,Equipment,56000,209000,9,13.33,4,Repaid on time,29,13,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO095,Karnataka,Belagavi,Maize,3.97,Borewell,LOAN095,Equipment,152000,146000,12,10.71,2,Occasional delay,22,4,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO096,Karnataka,Dharwad,Cotton,10.04,Borewell,LOAN096,Equipment,112000,273000,9,11.24,4,Repaid on time,-32,-4,61,77000,Defaulted,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO097,Uttar Pradesh,Prayagraj,Maize,2.64,Mixed,LOAN097,Post-harvest storage,131000,90000,12,7.87,5,No previous loan,30,35,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO098,Maharashtra,Pune,Onion,5.48,Rainfed,LOAN098,Equipment,55000,259000,9,9.0,1,Repaid on time,-18,-18,38,38000,Overdue,1,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO099,Maharashtra,Nashik,Millet,1.83,Rainfed,LOAN099,Equipment,51000,71000,6,10.18,2,Occasional delay,-36,-16,1,1000,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA
+DEMO100,Karnataka,Dharwad,Wheat,11.42,Borewell,LOAN100,Equipment,206000,272000,12,9.28,1,Repeated delays,-19,-7,0,0,Repaid,0,SYNTHETIC_DEMO_NOT_REAL_FARMER_DATA

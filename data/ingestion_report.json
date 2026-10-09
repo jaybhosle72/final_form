@@ -1,0 +1,93 @@
+{
+  "ingestion_timestamp": "2026-10-09T18:03:55.794138",
+  "datasets_processed": 12,
+  "total_files": 14,
+  "total_rows": 186676,
+  "status": "SUCCESS",
+  "dataset_summaries": [
+    {
+      "id": "crop_recommendation_water",
+      "domain": "Crop Recommendation & Water Requirements",
+      "files": 1,
+      "rows": 2221,
+      "status": "INSPECTED"
+    },
+    {
+      "id": "maharashtra_crop_data",
+      "domain": "Maharashtra District Crop Production & Yield",
+      "files": 1,
+      "rows": 2200,
+      "status": "INSPECTED"
+    },
+    {
+      "id": "crop_recommendation",
+      "domain": "Soil NPK & Climate Crop Recommendation",
+      "files": 1,
+      "rows": 2200,
+      "status": "INSPECTED"
+    },
+    {
+      "id": "crop_fertilizer",
+      "domain": "Crop & Fertilizer Requirement Matching",
+      "files": 1,
+      "rows": 2200,
+      "status": "INSPECTED"
+    },
+    {
+      "id": "fertilizer_prediction",
+      "domain": "Soil & Crop Fertilizer Prediction",
+      "files": 1,
+      "rows": 100000,
+      "status": "INSPECTED"
+    },
+    {
+      "id": "crop_yield_recommendation",
+      "domain": "Agronomic Crop Yield & Recommendation",
+      "files": 1,
+      "rows": 694,
+      "status": "INSPECTED"
+    },
+    {
+      "id": "crop_medicine_recommendation",
+      "domain": "Crop Disease Protection & Medicine Guidance",
+      "files": 1,
+      "rows": 10470,
+      "status": "INSPECTED"
+    },
+    {
+      "id": "soil_type",
+      "domain": "Soil Classification & Structural Types",
+      "files": 1,
+      "rows": 3400,
+      "status": "INSPECTED"
+    },
+    {
+      "id": "crop_dataset",
+      "domain": "General Agricultural & Crop Characteristics",
+      "files": 2,
+      "rows": 13192,
+      "status": "INSPECTED"
+    },
+    {
+      "id": "crop_npk",
+      "domain": "Soil NPK Nutrient Ratios for Crops",
+      "files": 1,
+      "rows": 20000,
+      "status": "INSPECTED"
+    },
+    {
+      "id": "fertilizer",
+      "domain": "Fertilizer Chemical Composition & Dosage",
+      "files": 1,
+      "rows": 99,
+      "status": "INSPECTED"
+    },
+    {
+      "id": "nutrient_loss",
+      "domain": "Agricultural Runoff & Soil Nutrient Loss",
+      "files": 2,
+      "rows": 30000,
+      "status": "INSPECTED"
+    }
+  ]
+}

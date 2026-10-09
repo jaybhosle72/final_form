@@ -1,0 +1,48 @@
+[
+  {
+    "username": "farmer1",
+    "password_hash": "72eda9f4a3043c62e4b6cbc473d18c48cf56e751c19bd60bd21d69bc70548de6",
+    "role": "farmer",
+    "farmer_id": "DEMO001",
+    "full_name": "Ramesh Patil",
+    "district": "Dharwad",
+    "state": "Karnataka",
+    "phone": "+91 98765 43201"
+  },
+  {
+    "username": "farmer2",
+    "password_hash": "72eda9f4a3043c62e4b6cbc473d18c48cf56e751c19bd60bd21d69bc70548de6",
+    "role": "farmer",
+    "farmer_id": "DEMO002",
+    "full_name": "Suresh Kumar",
+    "district": "Pune",
+    "state": "Maharashtra",
+    "phone": "+91 98765 43202"
+  },
+  {
+    "username": "farmer3",
+    "password_hash": "72eda9f4a3043c62e4b6cbc473d18c48cf56e751c19bd60bd21d69bc70548de6",
+    "role": "farmer",
+    "farmer_id": "DEMO003",
+    "full_name": "Vijay Sharma",
+    "district": "Jaipur",
+    "state": "Rajasthan",
+    "phone": "+91 98765 43203"
+  },
+  {
+    "username": "officer1",
+    "password_hash": "dbff68280ffd593043b0e8b68a8bb9491a9cc558b258f2b94caa6af344f58111",
+    "role": "bank_officer",
+    "officer_id": "OFFICER_001",
+    "full_name": "Anil Deshmukh (Credit Officer)",
+    "branch": "NABARD Hubli-Dharwad Branch"
+  },
+  {
+    "username": "officer2",
+    "password_hash": "dbff68280ffd593043b0e8b68a8bb9491a9cc558b258f2b94caa6af344f58111",
+    "role": "bank_officer",
+    "officer_id": "OFFICER_002",
+    "full_name": "Priya Singh (Regional Credit Manager)",
+    "branch": "NABARD State Headquarters"
+  }
+]

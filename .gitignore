@@ -1,0 +1,18 @@
+# Environment variables & secrets
+.env
+.env.local
+.env.*.local
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# IDE & Editor files
+.vscode/
+.idea/
+
+# Logs & temporary files
+*.log
+scratch/*.tmp

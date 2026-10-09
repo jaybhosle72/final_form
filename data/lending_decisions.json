@@ -1,0 +1,14 @@
+[
+  {
+    "application_id": "APP-2026-3857",
+    "farmer_id": "DEMO001",
+    "decision": "Approved",
+    "action": "approve",
+    "officer_notes": "Approved following automated dual-pillar risk assessment. Strong CIBIL history, verified land record, and low climate vulnerability.",
+    "approved_amount_inr": 150000.0,
+    "additional_info_requested": null,
+    "recorded_by": "officer1",
+    "officer_name": "Anil Deshmukh (Credit Officer)",
+    "timestamp": "2026-10-09T21:49:16.587294"
+  }
+]

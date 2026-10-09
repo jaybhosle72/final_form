@@ -1,0 +1,3530 @@
+{
+  "generated_at": "2026-10-09T18:03:55.104463",
+  "total_datasets": 12,
+  "datasets": [
+    {
+      "dataset_id": "crop_recommendation_water",
+      "handle": "sakshi21122001/crop-recommendation-with-water-data",
+      "domain": "Crop Recommendation & Water Requirements",
+      "folder": "crop_recommendation_water",
+      "status": "INSPECTED",
+      "total_files": 1,
+      "total_rows": 2221,
+      "files": [
+        {
+          "file_name": "crops1.csv",
+          "relative_path": "crop_recommendation_water\\crops1.csv",
+          "file_size_bytes": 166520,
+          "status": "SUCCESS",
+          "row_count": 2221,
+          "column_count": 9,
+          "columns": [
+            {
+              "name": "N",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 231,
+              "stats": {
+                "min": 0,
+                "max": 496,
+                "mean": 63.829806393516435,
+                "std": 80.9319969987504
+              }
+            },
+            {
+              "name": "P",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 183,
+              "stats": {
+                "min": 5,
+                "max": 250,
+                "mean": 60.604682575416476,
+                "std": 45.23958698215384
+              }
+            },
+            {
+              "name": "K",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 134,
+              "stats": {
+                "min": 5,
+                "max": 250,
+                "mean": 55.86447546150383,
+                "std": 60.15204536641313
+              }
+            },
+            {
+              "name": "temperature(in degree celsius)",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2221,
+              "stats": {
+                "min": 8.825674745,
+                "max": 43.67549305,
+                "mean": 25.639519405468256,
+                "std": 5.352845241888309
+              }
+            },
+            {
+              "name": "humidity(in percentage)",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2221,
+              "stats": {
+                "min": 14.25803981,
+                "max": 99.98187601,
+                "mean": 71.16385589656912,
+                "std": 22.182367040896764
+              }
+            },
+            {
+              "name": "ph of soil",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2221,
+              "stats": {
+                "min": 3.504752314,
+                "max": 9.93509073,
+                "mean": 6.488970055882936,
+                "std": 0.8647277590448392
+              }
+            },
+            {
+              "name": "rainfall( in mm )",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2221,
+              "stats": {
+                "min": 20.21126747,
+                "max": 898.7216568,
+                "mean": 164.17001515555606,
+                "std": 209.08188178672862
+              }
+            },
+            {
+              "name": "label",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 22,
+              "top_categories": {
+                "Sapota": 120,
+                "fingermillet": 101,
+                "rice": 100,
+                "maize": 100,
+                "chickpea": 100
+              }
+            },
+            {
+              "name": "water-availability(liters per year)",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2191,
+              "stats": {
+                "min": 0.00031,
+                "max": 114462.0,
+                "mean": 5847.690736803581,
+                "std": 22412.87139829521
+              }
+            }
+          ],
+          "missing_cells": 0,
+          "duplicate_rows": 0,
+          "sample_rows": [
+            {
+              "N": 90,
+              "P": 42,
+              "K": 43,
+              "temperature(in degree celsius)": 20.87974371,
+              "humidity(in percentage)": 82.00274423,
+              "ph of soil": 6.502985292,
+              "rainfall( in mm )": 202.9355362,
+              "label": "rice",
+              "water-availability(liters per year)": 3000.0
+            },
+            {
+              "N": 85,
+              "P": 58,
+              "K": 41,
+              "temperature(in degree celsius)": 21.77046169,
+              "humidity(in percentage)": 80.31964408,
+              "ph of soil": 7.038096361,
+              "rainfall( in mm )": 226.6555374,
+              "label": "rice",
+              "water-availability(liters per year)": 3020.0
+            },
+            {
+              "N": 60,
+              "P": 55,
+              "K": 44,
+              "temperature(in degree celsius)": 23.00445915,
+              "humidity(in percentage)": 82.3207629,
+              "ph of soil": 7.840207144,
+              "rainfall( in mm )": 263.9642476,
+              "label": "rice",
+              "water-availability(liters per year)": 3040.0
+            },
+            {
+              "N": 74,
+              "P": 35,
+              "K": 40,
+              "temperature(in degree celsius)": 26.49109635,
+              "humidity(in percentage)": 80.15836264,
+              "ph of soil": 6.980400905,
+              "rainfall( in mm )": 242.8640342,
+              "label": "rice",
+              "water-availability(liters per year)": 3060.0
+            },
+            {
+              "N": 78,
+              "P": 42,
+              "K": 42,
+              "temperature(in degree celsius)": 20.13017482,
+              "humidity(in percentage)": 81.60487287,
+              "ph of soil": 7.628472891,
+              "rainfall( in mm )": 262.7173405,
+              "label": "rice",
+              "water-availability(liters per year)": 3080.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_id": "maharashtra_crop_data",
+      "handle": "dsmlindian/crop-data-maharashtra",
+      "domain": "Maharashtra District Crop Production & Yield",
+      "folder": "maharashtra_crop_data",
+      "status": "INSPECTED",
+      "total_files": 1,
+      "total_rows": 2200,
+      "files": [
+        {
+          "file_name": "Crop_recommendation_konkan_maharashtra.csv",
+          "relative_path": "maharashtra_crop_data\\Crop_recommendation_konkan_maharashtra.csv",
+          "file_size_bytes": 150034,
+          "status": "SUCCESS",
+          "row_count": 2200,
+          "column_count": 8,
+          "columns": [
+            {
+              "name": "N",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 137,
+              "stats": {
+                "min": 0,
+                "max": 140,
+                "mean": 50.551818181818184,
+                "std": 36.9173338337566
+              }
+            },
+            {
+              "name": "P",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 117,
+              "stats": {
+                "min": 5,
+                "max": 145,
+                "mean": 53.36272727272727,
+                "std": 32.98588273858715
+              }
+            },
+            {
+              "name": "K",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 73,
+              "stats": {
+                "min": 5,
+                "max": 205,
+                "mean": 48.14909090909091,
+                "std": 50.64793054666013
+              }
+            },
+            {
+              "name": "temperature",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2200,
+              "stats": {
+                "min": 8.825674745,
+                "max": 43.67549305,
+                "mean": 25.616243851779544,
+                "std": 5.063748599958843
+              }
+            },
+            {
+              "name": "humidity",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2200,
+              "stats": {
+                "min": 14.25803981,
+                "max": 99.98187601,
+                "mean": 71.48177921778637,
+                "std": 22.263811589761083
+              }
+            },
+            {
+              "name": "ph",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2200,
+              "stats": {
+                "min": 3.504752314,
+                "max": 9.93509073,
+                "mean": 6.469480065256364,
+                "std": 0.7739376880298733
+              }
+            },
+            {
+              "name": "rainfall",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2200,
+              "stats": {
+                "min": 20.21126747,
+                "max": 298.5601175,
+                "mean": 103.46365541576817,
+                "std": 54.95838852487813
+              }
+            },
+            {
+              "name": "label",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 22,
+              "top_categories": {
+                "rice": 100,
+                "maize": 100,
+                "chickpea": 100,
+                "kidneybeans": 100,
+                "pigeonpeas": 100
+              }
+            }
+          ],
+          "missing_cells": 0,
+          "duplicate_rows": 0,
+          "sample_rows": [
+            {
+              "N": 90,
+              "P": 42,
+              "K": 43,
+              "temperature": 20.87974371,
+              "humidity": 82.00274423,
+              "ph": 6.502985292000001,
+              "rainfall": 202.9355362,
+              "label": "rice"
+            },
+            {
+              "N": 85,
+              "P": 58,
+              "K": 41,
+              "temperature": 21.77046169,
+              "humidity": 80.31964408,
+              "ph": 7.038096361,
+              "rainfall": 226.6555374,
+              "label": "rice"
+            },
+            {
+              "N": 60,
+              "P": 55,
+              "K": 44,
+              "temperature": 23.00445915,
+              "humidity": 82.3207629,
+              "ph": 7.840207144,
+              "rainfall": 263.9642476,
+              "label": "rice"
+            },
+            {
+              "N": 74,
+              "P": 35,
+              "K": 40,
+              "temperature": 26.49109635,
+              "humidity": 80.15836264,
+              "ph": 6.980400905,
+              "rainfall": 242.8640342,
+              "label": "rice"
+            },
+            {
+              "N": 78,
+              "P": 42,
+              "K": 42,
+              "temperature": 20.13017482,
+              "humidity": 81.60487287,
+              "ph": 7.628472891,
+              "rainfall": 262.7173405,
+              "label": "rice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_id": "crop_recommendation",
+      "handle": "sushilyeotiwad/crop-recommendation-dataset",
+      "domain": "Soil NPK & Climate Crop Recommendation",
+      "folder": "crop_recommendation",
+      "status": "INSPECTED",
+      "total_files": 1,
+      "total_rows": 2200,
+      "files": [
+        {
+          "file_name": "Crop_Recommendation.csv",
+          "relative_path": "crop_recommendation\\Crop_Recommendation.csv",
+          "file_size_bytes": 144837,
+          "status": "SUCCESS",
+          "row_count": 2200,
+          "column_count": 8,
+          "columns": [
+            {
+              "name": "N",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 137,
+              "stats": {
+                "min": 0,
+                "max": 140,
+                "mean": 50.551818181818184,
+                "std": 36.9173338337566
+              }
+            },
+            {
+              "name": "P",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 117,
+              "stats": {
+                "min": 5,
+                "max": 145,
+                "mean": 53.36272727272727,
+                "std": 32.98588273858715
+              }
+            },
+            {
+              "name": "K",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 73,
+              "stats": {
+                "min": 5,
+                "max": 205,
+                "mean": 48.14909090909091,
+                "std": 50.64793054666013
+              }
+            },
+            {
+              "name": "Temperature",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2200,
+              "stats": {
+                "min": 8.825674745,
+                "max": 43.67549305,
+                "mean": 25.616243851779544,
+                "std": 5.063748599958843
+              }
+            },
+            {
+              "name": "Humidity",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2200,
+              "stats": {
+                "min": 14.25803981,
+                "max": 99.98187601,
+                "mean": 71.48177921778637,
+                "std": 22.263811589761083
+              }
+            },
+            {
+              "name": "ph",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2200,
+              "stats": {
+                "min": 3.504752314,
+                "max": 9.93509073,
+                "mean": 6.469480065256364,
+                "std": 0.7739376880298733
+              }
+            },
+            {
+              "name": "Rainfall",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2200,
+              "stats": {
+                "min": 20.21126747,
+                "max": 298.5601175,
+                "mean": 103.46365541576817,
+                "std": 54.95838852487813
+              }
+            },
+            {
+              "name": "label",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 22,
+              "top_categories": {
+                "rice": 100,
+                "maize": 100,
+                "chickpea": 100,
+                "kidneybeans": 100,
+                "pigeonpeas": 100
+              }
+            }
+          ],
+          "missing_cells": 0,
+          "duplicate_rows": 0,
+          "sample_rows": [
+            {
+              "N": 90,
+              "P": 42,
+              "K": 43,
+              "Temperature": 20.87974371,
+              "Humidity": 82.00274423,
+              "ph": 6.502985292,
+              "Rainfall": 202.9355362,
+              "label": "rice"
+            },
+            {
+              "N": 85,
+              "P": 58,
+              "K": 41,
+              "Temperature": 21.77046169,
+              "Humidity": 80.31964408,
+              "ph": 7.038096361,
+              "Rainfall": 226.6555374,
+              "label": "rice"
+            },
+            {
+              "N": 60,
+              "P": 55,
+              "K": 44,
+              "Temperature": 23.00445915,
+              "Humidity": 82.3207629,
+              "ph": 7.840207144,
+              "Rainfall": 263.9642476,
+              "label": "rice"
+            },
+            {
+              "N": 74,
+              "P": 35,
+              "K": 40,
+              "Temperature": 26.49109635,
+              "Humidity": 80.15836264,
+              "ph": 6.980400905,
+              "Rainfall": 242.8640342,
+              "label": "rice"
+            },
+            {
+              "N": 78,
+              "P": 42,
+              "K": 42,
+              "Temperature": 20.13017482,
+              "Humidity": 81.60487287,
+              "ph": 7.628472891,
+              "Rainfall": 262.7173405,
+              "label": "rice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_id": "crop_fertilizer",
+      "handle": "mayankmohapatra77/crop-and-fertilizer-dataset",
+      "domain": "Crop & Fertilizer Requirement Matching",
+      "folder": "crop_fertilizer",
+      "status": "INSPECTED",
+      "total_files": 1,
+      "total_rows": 2200,
+      "files": [
+        {
+          "file_name": "CropRecommendation_Fertilizer_Corrected (3).csv",
+          "relative_path": "crop_fertilizer\\CropRecommendation_Fertilizer_Corrected (3).csv",
+          "file_size_bytes": 177742,
+          "status": "SUCCESS",
+          "row_count": 2200,
+          "column_count": 10,
+          "columns": [
+            {
+              "name": "N",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 137,
+              "stats": {
+                "min": 0,
+                "max": 140,
+                "mean": 50.551818181818184,
+                "std": 36.9173338337566
+              }
+            },
+            {
+              "name": "P",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 117,
+              "stats": {
+                "min": 5,
+                "max": 145,
+                "mean": 53.36272727272727,
+                "std": 32.98588273858715
+              }
+            },
+            {
+              "name": "K",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 73,
+              "stats": {
+                "min": 5,
+                "max": 205,
+                "mean": 48.14909090909091,
+                "std": 50.64793054666013
+              }
+            },
+            {
+              "name": "temperature",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2200,
+              "stats": {
+                "min": 8.825674745,
+                "max": 43.67549305,
+                "mean": 25.616243851779544,
+                "std": 5.063748599958843
+              }
+            },
+            {
+              "name": "humidity",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2200,
+              "stats": {
+                "min": 14.25803981,
+                "max": 99.98187601,
+                "mean": 71.48177921778637,
+                "std": 22.263811589761083
+              }
+            },
+            {
+              "name": "ph",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2200,
+              "stats": {
+                "min": 3.504752314,
+                "max": 9.93509073,
+                "mean": 6.469480065256364,
+                "std": 0.7739376880298733
+              }
+            },
+            {
+              "name": "rainfall",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2200,
+              "stats": {
+                "min": 20.21126747,
+                "max": 298.5601175,
+                "mean": 103.46365541576817,
+                "std": 54.95838852487813
+              }
+            },
+            {
+              "name": "soil_type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 5,
+              "top_categories": {
+                "Sandy": 949,
+                "Loamy": 861,
+                "Clayey": 227,
+                "Black": 91,
+                "Sandy Loam": 72
+              }
+            },
+            {
+              "name": "label",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 22,
+              "top_categories": {
+                "rice": 100,
+                "maize": 100,
+                "chickpea": 100,
+                "kidneybeans": 100,
+                "pigeonpeas": 100
+              }
+            },
+            {
+              "name": "Recommended_Fertilizer",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 5,
+              "top_categories": {
+                "10-10-10": 1177,
+                "MOP": 300,
+                "Urea": 289,
+                "17-17-17": 237,
+                "DAP": 197
+              }
+            }
+          ],
+          "missing_cells": 0,
+          "duplicate_rows": 0,
+          "sample_rows": [
+            {
+              "N": 90,
+              "P": 42,
+              "K": 43,
+              "temperature": 20.87974371,
+              "humidity": 82.00274423,
+              "ph": 6.502985292000001,
+              "rainfall": 202.9355362,
+              "soil_type": "Clayey",
+              "label": "rice",
+              "Recommended_Fertilizer": "10-10-10"
+            },
+            {
+              "N": 85,
+              "P": 58,
+              "K": 41,
+              "temperature": 21.77046169,
+              "humidity": 80.31964408,
+              "ph": 7.038096361,
+              "rainfall": 226.6555374,
+              "soil_type": "Loamy",
+              "label": "rice",
+              "Recommended_Fertilizer": "10-10-10"
+            },
+            {
+              "N": 60,
+              "P": 55,
+              "K": 44,
+              "temperature": 23.00445915,
+              "humidity": 82.3207629,
+              "ph": 7.840207144,
+              "rainfall": 263.9642476,
+              "soil_type": "Clayey",
+              "label": "rice",
+              "Recommended_Fertilizer": "10-10-10"
+            },
+            {
+              "N": 74,
+              "P": 35,
+              "K": 40,
+              "temperature": 26.49109635,
+              "humidity": 80.15836264,
+              "ph": 6.980400905,
+              "rainfall": 242.8640342,
+              "soil_type": "Clayey",
+              "label": "rice",
+              "Recommended_Fertilizer": "10-10-10"
+            },
+            {
+              "N": 78,
+              "P": 42,
+              "K": 42,
+              "temperature": 20.13017482,
+              "humidity": 81.60487287,
+              "ph": 7.628472891,
+              "rainfall": 262.7173405,
+              "soil_type": "Clayey",
+              "label": "rice",
+              "Recommended_Fertilizer": "10-10-10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_id": "fertilizer_prediction",
+      "handle": "irakozekelly/fertilizer-prediction",
+      "domain": "Soil & Crop Fertilizer Prediction",
+      "folder": "fertilizer_prediction",
+      "status": "INSPECTED",
+      "total_files": 1,
+      "total_rows": 100000,
+      "files": [
+        {
+          "file_name": "Fertilizer Prediction.csv",
+          "relative_path": "fertilizer_prediction\\Fertilizer Prediction.csv",
+          "file_size_bytes": 3868731,
+          "status": "SUCCESS",
+          "row_count": 100000,
+          "column_count": 9,
+          "columns": [
+            {
+              "name": "Temparature",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 14,
+              "stats": {
+                "min": 25,
+                "max": 38,
+                "mean": 31.5033,
+                "std": 4.019941630087071
+              }
+            },
+            {
+              "name": "Humidity",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 23,
+              "stats": {
+                "min": 50,
+                "max": 72,
+                "mean": 60.98581,
+                "std": 6.651393166413376
+              }
+            },
+            {
+              "name": "Moisture",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 41,
+              "stats": {
+                "min": 25,
+                "max": 65,
+                "mean": 45.00344,
+                "std": 11.838709799505061
+              }
+            },
+            {
+              "name": "Soil Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 5,
+              "top_categories": {
+                "Black": 20100,
+                "Sandy": 20064,
+                "Loamy": 19999,
+                "Clayey": 19920,
+                "Red": 19917
+              }
+            },
+            {
+              "name": "Crop Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 11,
+              "top_categories": {
+                "Sugarcane": 9267,
+                "Cotton": 9237,
+                "Tobacco": 9224,
+                "Millets": 9154,
+                "Paddy": 9103
+              }
+            },
+            {
+              "name": "Nitrogen",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 39,
+              "stats": {
+                "min": 4,
+                "max": 42,
+                "mean": 22.98677,
+                "std": 11.247289450454266
+              }
+            },
+            {
+              "name": "Potassium",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 20,
+              "stats": {
+                "min": 0,
+                "max": 19,
+                "mean": 9.47222,
+                "std": 5.768564902556817
+              }
+            },
+            {
+              "name": "Phosphorous",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 43,
+              "stats": {
+                "min": 0,
+                "max": 42,
+                "mean": 21.01348,
+                "std": 12.391180480613501
+              }
+            },
+            {
+              "name": "Fertilizer Name",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 7,
+              "top_categories": {
+                "14-35-14": 14492,
+                "10-26-26": 14378,
+                "Urea": 14325,
+                "28-28": 14232,
+                "DAP": 14220
+              }
+            }
+          ],
+          "missing_cells": 0,
+          "duplicate_rows": 0,
+          "sample_rows": [
+            {
+              "Temparature": 32,
+              "Humidity": 51,
+              "Moisture": 41,
+              "Soil Type": "Red",
+              "Crop Type": "Ground Nuts",
+              "Nitrogen": 7,
+              "Potassium": 3,
+              "Phosphorous": 19,
+              "Fertilizer Name": "14-35-14"
+            },
+            {
+              "Temparature": 35,
+              "Humidity": 58,
+              "Moisture": 35,
+              "Soil Type": "Black",
+              "Crop Type": "Cotton",
+              "Nitrogen": 4,
+              "Potassium": 14,
+              "Phosphorous": 16,
+              "Fertilizer Name": "Urea"
+            },
+            {
+              "Temparature": 27,
+              "Humidity": 55,
+              "Moisture": 43,
+              "Soil Type": "Sandy",
+              "Crop Type": "Sugarcane",
+              "Nitrogen": 28,
+              "Potassium": 0,
+              "Phosphorous": 17,
+              "Fertilizer Name": "20-20"
+            },
+            {
+              "Temparature": 33,
+              "Humidity": 56,
+              "Moisture": 56,
+              "Soil Type": "Loamy",
+              "Crop Type": "Ground Nuts",
+              "Nitrogen": 37,
+              "Potassium": 5,
+              "Phosphorous": 24,
+              "Fertilizer Name": "28-28"
+            },
+            {
+              "Temparature": 32,
+              "Humidity": 70,
+              "Moisture": 60,
+              "Soil Type": "Red",
+              "Crop Type": "Ground Nuts",
+              "Nitrogen": 4,
+              "Potassium": 6,
+              "Phosphorous": 9,
+              "Fertilizer Name": "14-35-14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_id": "crop_yield_recommendation",
+      "handle": "vedikasd/crop-data-for-yield-and-recommendation-analysis",
+      "domain": "Agronomic Crop Yield & Recommendation",
+      "folder": "crop_yield_recommendation",
+      "status": "INSPECTED",
+      "total_files": 1,
+      "total_rows": 694,
+      "files": [
+        {
+          "file_name": "crop_data.csv",
+          "relative_path": "crop_yield_recommendation\\crop_data.csv",
+          "file_size_bytes": 25579,
+          "status": "SUCCESS",
+          "row_count": 694,
+          "column_count": 7,
+          "columns": [
+            {
+              "name": "CROP",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 97,
+              "top_categories": {
+                "PAPAYA": 15,
+                "SUNFLOWER": 15,
+                "DRAGON FRUIT": 10,
+                "POMEGRANATES": 10,
+                "SAFFRON (KESAR)": 10
+              }
+            },
+            {
+              "name": "N",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 67,
+              "stats": {
+                "min": 10,
+                "max": 250,
+                "mean": 75.48703170028818,
+                "std": 39.655940622740474
+              }
+            },
+            {
+              "name": "P",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 54,
+              "stats": {
+                "min": 10,
+                "max": 158,
+                "mean": 45.31268011527378,
+                "std": 22.601611137165648
+              }
+            },
+            {
+              "name": "K",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 70,
+              "stats": {
+                "min": 10,
+                "max": 615,
+                "mean": 68.5,
+                "std": 61.404855484369286
+              }
+            },
+            {
+              "name": "PH",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 104,
+              "stats": {
+                "min": 3.82,
+                "max": 7.6,
+                "mean": 6.028342939481268,
+                "std": 0.7298882026911455
+              }
+            },
+            {
+              "name": "RAINFALL",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 137,
+              "stats": {
+                "min": 15.34,
+                "max": 2817.86,
+                "mean": 904.8644706916426,
+                "std": 546.2252066933495
+              }
+            },
+            {
+              "name": "TEMP",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 95,
+              "stats": {
+                "min": 8.0,
+                "max": 38.0,
+                "mean": 25.47215273775216,
+                "std": 4.704521225302474
+              }
+            }
+          ],
+          "missing_cells": 0,
+          "duplicate_rows": 48,
+          "sample_rows": [
+            {
+              "CROP": "DRAGON FRUIT",
+              "N": 100,
+              "P": 55,
+              "K": 165,
+              "PH": 5.7,
+              "RAINFALL": 1050.0,
+              "TEMP": 32.0
+            },
+            {
+              "CROP": "DRAGON FRUIT",
+              "N": 100,
+              "P": 60,
+              "K": 160,
+              "PH": 6.5,
+              "RAINFALL": 900.0,
+              "TEMP": 32.0
+            },
+            {
+              "CROP": "DRAGON FRUIT",
+              "N": 90,
+              "P": 30,
+              "K": 160,
+              "PH": 6.4,
+              "RAINFALL": 900.0,
+              "TEMP": 31.0
+            },
+            {
+              "CROP": "DRAGON FRUIT",
+              "N": 80,
+              "P": 40,
+              "K": 150,
+              "PH": 6.0,
+              "RAINFALL": 800.0,
+              "TEMP": 30.0
+            },
+            {
+              "CROP": "DRAGON FRUIT",
+              "N": 80,
+              "P": 45,
+              "K": 150,
+              "PH": 6.0,
+              "RAINFALL": 800.0,
+              "TEMP": 34.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_id": "crop_medicine_recommendation",
+      "handle": "vishvavardhanbhasham/crop-recommendation-with-medicine",
+      "domain": "Crop Disease Protection & Medicine Guidance",
+      "folder": "crop_medicine_recommendation",
+      "status": "INSPECTED",
+      "total_files": 1,
+      "total_rows": 10470,
+      "files": [
+        {
+          "file_name": "Crop_Recm_Data.csv",
+          "relative_path": "crop_medicine_recommendation\\Crop_Recm_Data.csv",
+          "file_size_bytes": 1580904,
+          "status": "SUCCESS",
+          "row_count": 10470,
+          "column_count": 10,
+          "columns": [
+            {
+              "name": "N",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 8377,
+              "stats": {
+                "min": 0.0,
+                "max": 140.0,
+                "mean": 66.03552060067923,
+                "std": 40.31049463763413
+              }
+            },
+            {
+              "name": "P",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 8362,
+              "stats": {
+                "min": 5.0,
+                "max": 145.0,
+                "mean": 70.84380596322178,
+                "std": 39.857404187542755
+              }
+            },
+            {
+              "name": "K",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 8330,
+              "stats": {
+                "min": 5.0,
+                "max": 205.0,
+                "mean": 93.47173801319981,
+                "std": 60.82290463843938
+              }
+            },
+            {
+              "name": "temperature",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 10470,
+              "stats": {
+                "min": 8.825674745,
+                "max": 43.67549305,
+                "mean": 26.15912081498587,
+                "std": 9.243204771784084
+              }
+            },
+            {
+              "name": "humidity",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 10470,
+              "stats": {
+                "min": 14.25803981,
+                "max": 99.98187601,
+                "mean": 60.32001840213276,
+                "std": 24.801932159216687
+              }
+            },
+            {
+              "name": "ph",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 10470,
+              "stats": {
+                "min": 3.504752314,
+                "max": 9.93509073,
+                "mean": 6.677927212675167,
+                "std": 1.686410451417395
+              }
+            },
+            {
+              "name": "rainfall",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 10470,
+              "stats": {
+                "min": 20.21126747,
+                "max": 298.5601175,
+                "mean": 147.66957639660365,
+                "std": 78.89044322365764
+              }
+            },
+            {
+              "name": "label",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 22,
+              "top_categories": {
+                "chickpea": 1483,
+                "grapes": 1322,
+                "banana": 1060,
+                "coffee": 846,
+                "pigeonpeas": 807
+              }
+            },
+            {
+              "name": "Medicine",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 8,
+              "top_categories": {
+                "Foliar Fungicide (Mancozeb)": 3590,
+                "Copper Fungicide": 2125,
+                "Bio-Pesticide (Neem Oil)": 2027,
+                "Systemic Fungicide": 846,
+                "Fungicide (Azoxystrobin)": 792
+              }
+            },
+            {
+              "name": "Medicine_Use",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 14,
+              "top_categories": {
+                "prevents leaf spots and blights.": 3590,
+                "treats bacterial and fungal diseases.": 1985,
+                "Neem oil controls pests and powdery mildew.": 1395,
+                "Fungicide controls Coffee Leaf Rust.": 846,
+                "controls pests and powdery mildew.": 632
+              }
+            }
+          ],
+          "missing_cells": 0,
+          "duplicate_rows": 0,
+          "sample_rows": [
+            {
+              "N": 32.0,
+              "P": 141.0,
+              "K": 204.0,
+              "temperature": 8.825674745,
+              "humidity": 82.89753705,
+              "ph": 5.536645599,
+              "rainfall": 67.235765,
+              "label": "grapes",
+              "Medicine": "Copper Fungicide",
+              "Medicine_Use": "treats bacterial and fungal diseases."
+            },
+            {
+              "N": 14.74387582,
+              "P": 136.1302957,
+              "K": 201.8246564,
+              "temperature": 8.825925289,
+              "humidity": 88.03352653,
+              "ph": 6.681857577,
+              "rainfall": 85.98580411,
+              "label": "apple",
+              "Medicine": "Copper Fungicide",
+              "Medicine_Use": "treats bacterial and fungal diseases."
+            },
+            {
+              "N": 90.56158305,
+              "P": 48.1312815,
+              "K": 141.4927917,
+              "temperature": 8.827828246,
+              "humidity": 30.10970724,
+              "ph": 5.501322404,
+              "rainfall": 291.7416131,
+              "label": "chickpea",
+              "Medicine": "Foliar Fungicide (Mancozeb)",
+              "Medicine_Use": "prevents leaf spots and blights."
+            },
+            {
+              "N": 46.54677285,
+              "P": 17.98170792,
+              "K": 197.5726025,
+              "temperature": 8.828479671,
+              "humidity": 91.0319353,
+              "ph": 7.153059088,
+              "rainfall": 244.3633172,
+              "label": "apple",
+              "Medicine": "Copper Fungicide",
+              "Medicine_Use": "treats bacterial and fungal diseases."
+            },
+            {
+              "N": 129.4464373,
+              "P": 29.25886819,
+              "K": 13.02228487,
+              "temperature": 8.828682615,
+              "humidity": 55.44237777,
+              "ph": 3.588954237,
+              "rainfall": 175.0514925,
+              "label": "coffee",
+              "Medicine": "Systemic Fungicide",
+              "Medicine_Use": "Fungicide controls Coffee Leaf Rust."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_id": "soil_type",
+      "handle": "aniketkumaraugustya/soil-type-dataset",
+      "domain": "Soil Classification & Structural Types",
+      "folder": "soil_type",
+      "status": "INSPECTED",
+      "total_files": 1,
+      "total_rows": 3400,
+      "files": [
+        {
+          "file_name": "soil_with_crop_recommendations.csv",
+          "relative_path": "soil_type\\soil_with_crop_recommendations.csv",
+          "file_size_bytes": 478441,
+          "status": "SUCCESS",
+          "row_count": 3400,
+          "column_count": 20,
+          "columns": [
+            {
+              "name": "Timestamp",
+              "dtype": "str",
+              "null_count": 2200,
+              "null_percentage": 64.71,
+              "unique_count": 2,
+              "top_categories": {
+                "54:53.5": 720,
+                "54:53.4": 480
+              }
+            },
+            {
+              "name": "Plant_ID",
+              "dtype": "float64",
+              "null_count": 2200,
+              "null_percentage": 64.71,
+              "unique_count": 10,
+              "stats": {
+                "min": 1.0,
+                "max": 10.0,
+                "mean": 5.5,
+                "std": 2.873478855663454
+              }
+            },
+            {
+              "name": "Soil_Moisture",
+              "dtype": "float64",
+              "null_count": 2200,
+              "null_percentage": 64.71,
+              "unique_count": 1200,
+              "stats": {
+                "min": 10.0007236,
+                "max": 39.99316429,
+                "mean": 25.106918045308333,
+                "std": 8.677724978303042
+              }
+            },
+            {
+              "name": "Ambient_Temperature",
+              "dtype": "float64",
+              "null_count": 2200,
+              "null_percentage": 64.71,
+              "unique_count": 1200,
+              "stats": {
+                "min": 18.00199267,
+                "max": 29.9908861,
+                "mean": 23.999129985025,
+                "std": 3.4415611316352193
+              }
+            },
+            {
+              "name": "Soil_Temperature",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3400,
+              "stats": {
+                "min": 8.825674745,
+                "max": 43.67549305,
+                "mean": 23.619144010689705,
+                "std": 5.18996892905886
+              }
+            },
+            {
+              "name": "Humidity",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3400,
+              "stats": {
+                "min": 14.25803981,
+                "max": 99.98187601,
+                "mean": 65.61285659125001,
+                "std": 20.274879393516798
+              }
+            },
+            {
+              "name": "Light_Intensity",
+              "dtype": "float64",
+              "null_count": 2200,
+              "null_percentage": 64.71,
+              "unique_count": 1200,
+              "stats": {
+                "min": 200.6154818,
+                "max": 999.8562615,
+                "mean": 612.6372653820001,
+                "std": 228.31885289681748
+              }
+            },
+            {
+              "name": "Soil_pH",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3400,
+              "stats": {
+                "min": 3.504752314,
+                "max": 9.93509073,
+                "mean": 6.4887584112047065,
+                "std": 0.7124458800719048
+              }
+            },
+            {
+              "name": "Nitrogen_Level",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 1201,
+              "stats": {
+                "min": 10.00364972,
+                "max": 90.0,
+                "mean": 68.8612061946,
+                "std": 29.43181312427916
+              }
+            },
+            {
+              "name": "Phosphorus_Level",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 1317,
+              "stats": {
+                "min": 5.0,
+                "max": 145.0,
+                "mean": 45.21040612227059,
+                "std": 29.532927664370064
+              }
+            },
+            {
+              "name": "Potassium_Level",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 1273,
+              "stats": {
+                "min": 5.0,
+                "max": 205.0,
+                "mean": 41.7830900465,
+                "std": 42.21281439748905
+              }
+            },
+            {
+              "name": "Chlorophyll_Content",
+              "dtype": "float64",
+              "null_count": 2200,
+              "null_percentage": 64.71,
+              "unique_count": 1200,
+              "stats": {
+                "min": 20.02551096,
+                "max": 49.99081139,
+                "mean": 34.74959090668333,
+                "std": 8.766994997370297
+              }
+            },
+            {
+              "name": "Electrochemical_Signal",
+              "dtype": "float64",
+              "null_count": 2200,
+              "null_percentage": 64.71,
+              "unique_count": 1200,
+              "stats": {
+                "min": 0.002375966,
+                "max": 1.99611588,
+                "mean": 0.9877636839841667,
+                "std": 0.5751156918816349
+              }
+            },
+            {
+              "name": "Plant_Health_Status",
+              "dtype": "str",
+              "null_count": 2200,
+              "null_percentage": 64.71,
+              "unique_count": 3,
+              "top_categories": {
+                "High Stress": 500,
+                "Moderate Stress": 401,
+                "Healthy": 299
+              }
+            },
+            {
+              "name": "rainfall",
+              "dtype": "float64",
+              "null_count": 1200,
+              "null_percentage": 35.29,
+              "unique_count": 2200,
+              "stats": {
+                "min": 20.21126747,
+                "max": 298.5601175,
+                "mean": 103.46365541576817,
+                "std": 54.95838852487813
+              }
+            },
+            {
+              "name": "label",
+              "dtype": "str",
+              "null_count": 1200,
+              "null_percentage": 35.29,
+              "unique_count": 22,
+              "top_categories": {
+                "rice": 100,
+                "maize": 100,
+                "chickpea": 100,
+                "kidneybeans": 100,
+                "pigeonpeas": 100
+              }
+            },
+            {
+              "name": "Soil_Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 4,
+              "top_categories": {
+                "Slightly Acidic": 1663,
+                "Neutral": 1435,
+                "Alkaline": 185,
+                "Acidic": 117
+              }
+            },
+            {
+              "name": "Crop1",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 4,
+              "top_categories": {
+                "Rice": 1663,
+                "Wheat": 1435,
+                "Cotton": 185,
+                "Tea": 117
+              }
+            },
+            {
+              "name": "Crop2",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 4,
+              "top_categories": {
+                "Maize": 1663,
+                "Barley": 1435,
+                "Mustard": 185,
+                "Potato": 117
+              }
+            },
+            {
+              "name": "Crop3",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 4,
+              "top_categories": {
+                "Groundnut": 1663,
+                "Sugarcane": 1435,
+                "Pearl Millet": 185,
+                "Pineapple": 117
+              }
+            }
+          ],
+          "missing_cells": 20000,
+          "duplicate_rows": 0,
+          "sample_rows": [
+            {
+              "Timestamp": "54:53.4",
+              "Plant_ID": 1.0,
+              "Soil_Moisture": 27.52110877,
+              "Ambient_Temperature": 22.24024536,
+              "Soil_Temperature": 21.90043536,
+              "Humidity": 55.2919039,
+              "Light_Intensity": 556.1728051,
+              "Soil_pH": 5.581954516,
+              "Nitrogen_Level": 10.00364972,
+              "Phosphorus_Level": 45.80685203,
+              "Potassium_Level": 39.07619903,
+              "Chlorophyll_Content": 35.70300571,
+              "Electrochemical_Signal": 0.941402146,
+              "Plant_Health_Status": "High Stress",
+              "rainfall": null,
+              "label": null,
+              "Soil_Type": "Slightly Acidic",
+              "Crop1": "Rice",
+              "Crop2": "Maize",
+              "Crop3": "Groundnut"
+            },
+            {
+              "Timestamp": "54:53.4",
+              "Plant_ID": 1.0,
+              "Soil_Moisture": 14.83556615,
+              "Ambient_Temperature": 21.70676328,
+              "Soil_Temperature": 18.68089194,
+              "Humidity": 63.94918051,
+              "Light_Intensity": 596.1367212,
+              "Soil_pH": 7.135704906,
+              "Nitrogen_Level": 30.712562,
+              "Phosphorus_Level": 25.3943926,
+              "Potassium_Level": 17.94482607,
+              "Chlorophyll_Content": 27.99329577,
+              "Electrochemical_Signal": 0.164899361,
+              "Plant_Health_Status": "High Stress",
+              "rainfall": null,
+              "label": null,
+              "Soil_Type": "Neutral",
+              "Crop1": "Wheat",
+              "Crop2": "Barley",
+              "Crop3": "Sugarcane"
+            },
+            {
+              "Timestamp": "54:53.4",
+              "Plant_ID": 1.0,
+              "Soil_Moisture": 17.08636197,
+              "Ambient_Temperature": 21.18094556,
+              "Soil_Temperature": 15.39293913,
+              "Humidity": 67.83795649,
+              "Light_Intensity": 591.1246268,
+              "Soil_pH": 5.656852249,
+              "Nitrogen_Level": 29.33700224,
+              "Phosphorus_Level": 27.57389185,
+              "Potassium_Level": 35.70653021,
+              "Chlorophyll_Content": 43.64630752,
+              "Electrochemical_Signal": 1.081728041,
+              "Plant_Health_Status": "High Stress",
+              "rainfall": null,
+              "label": null,
+              "Soil_Type": "Slightly Acidic",
+              "Crop1": "Rice",
+              "Crop2": "Maize",
+              "Crop3": "Groundnut"
+            },
+            {
+              "Timestamp": "54:53.4",
+              "Plant_ID": 1.0,
+              "Soil_Moisture": 15.33615608,
+              "Ambient_Temperature": 22.59330194,
+              "Soil_Temperature": 22.7783939,
+              "Humidity": 58.19081101,
+              "Light_Intensity": 241.4124764,
+              "Soil_pH": 5.584522687,
+              "Nitrogen_Level": 16.96662065,
+              "Phosphorus_Level": 26.18070481,
+              "Potassium_Level": 26.25774575,
+              "Chlorophyll_Content": 37.83809483,
+              "Electrochemical_Signal": 1.186087971,
+              "Plant_Health_Status": "High Stress",
+              "rainfall": null,
+              "label": null,
+              "Soil_Type": "Slightly Acidic",
+              "Crop1": "Rice",
+              "Crop2": "Maize",
+              "Crop3": "Groundnut"
+            },
+            {
+              "Timestamp": "54:53.4",
+              "Plant_ID": 1.0,
+              "Soil_Moisture": 39.82221603,
+              "Ambient_Temperature": 28.92900106,
+              "Soil_Temperature": 18.10093728,
+              "Humidity": 63.77203577,
+              "Light_Intensity": 444.4938296,
+              "Soil_pH": 5.919706876,
+              "Nitrogen_Level": 10.94496067,
+              "Phosphorus_Level": 37.89890673,
+              "Potassium_Level": 37.65448346,
+              "Chlorophyll_Content": 48.26581159,
+              "Electrochemical_Signal": 1.609805188,
+              "Plant_Health_Status": "High Stress",
+              "rainfall": null,
+              "label": null,
+              "Soil_Type": "Slightly Acidic",
+              "Crop1": "Rice",
+              "Crop2": "Maize",
+              "Crop3": "Groundnut"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_id": "crop_dataset",
+      "handle": "sashankgarg23/crop-dataset",
+      "domain": "General Agricultural & Crop Characteristics",
+      "folder": "crop_dataset",
+      "status": "INSPECTED",
+      "total_files": 2,
+      "total_rows": 13192,
+      "files": [
+        {
+          "file_name": "merged_crop_dataset.csv",
+          "relative_path": "crop_dataset\\merged_crop_dataset.csv",
+          "file_size_bytes": 372752,
+          "status": "SUCCESS",
+          "row_count": 6596,
+          "column_count": 8,
+          "columns": [
+            {
+              "name": "N",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 139,
+              "stats": {
+                "min": 0,
+                "max": 180,
+                "mean": 65.33489993935719,
+                "std": 45.431015123013694
+              }
+            },
+            {
+              "name": "P",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 118,
+              "stats": {
+                "min": 5,
+                "max": 145,
+                "mean": 48.164493632504545,
+                "std": 23.699350523273385
+              }
+            },
+            {
+              "name": "K",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 80,
+              "stats": {
+                "min": 5,
+                "max": 205,
+                "mean": 50.29002425712553,
+                "std": 39.81288719621547
+              }
+            },
+            {
+              "name": "temperature",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2296,
+              "stats": {
+                "min": 1.18,
+                "max": 43.67549305,
+                "mean": 25.397239546870075,
+                "std": 5.052872582501118
+              }
+            },
+            {
+              "name": "humidity",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 5292,
+              "stats": {
+                "min": 14.25803981,
+                "max": 99.98187601,
+                "mean": 73.40718536451031,
+                "std": 17.588424612484314
+              }
+            },
+            {
+              "name": "ph",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2282,
+              "stats": {
+                "min": 3.504752314,
+                "max": 9.93509073,
+                "mean": 5.8627995972656155,
+                "std": 0.7561411864049804
+              }
+            },
+            {
+              "name": "rainfall",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2297,
+              "stats": {
+                "min": 3.274569,
+                "max": 3322.06,
+                "mean": 531.003575531184,
+                "std": 599.9895286397489
+              }
+            },
+            {
+              "name": "label",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 51,
+              "top_categories": {
+                "potato": 461,
+                "onion": 383,
+                "sorghum": 367,
+                "sunflower": 362,
+                "rapeseed": 361
+              }
+            }
+          ],
+          "missing_cells": 0,
+          "duplicate_rows": 0,
+          "sample_rows": [
+            {
+              "N": 24,
+              "P": 128,
+              "K": 196,
+              "temperature": 22.75088787,
+              "humidity": 90.69489172,
+              "ph": 5.521466996,
+              "rainfall": 110.4317855,
+              "label": "apple"
+            },
+            {
+              "N": 7,
+              "P": 144,
+              "K": 197,
+              "temperature": 23.8494014,
+              "humidity": 94.34814995,
+              "ph": 6.133220586,
+              "rainfall": 114.0512495,
+              "label": "apple"
+            },
+            {
+              "N": 14,
+              "P": 128,
+              "K": 205,
+              "temperature": 22.60800988,
+              "humidity": 94.58900601,
+              "ph": 6.226289556,
+              "rainfall": 116.0396587,
+              "label": "apple"
+            },
+            {
+              "N": 8,
+              "P": 120,
+              "K": 201,
+              "temperature": 21.18667419,
+              "humidity": 91.13435689,
+              "ph": 6.321152192,
+              "rainfall": 122.233323,
+              "label": "apple"
+            },
+            {
+              "N": 20,
+              "P": 129,
+              "K": 201,
+              "temperature": 23.41044706,
+              "humidity": 91.69913296,
+              "ph": 5.587905967,
+              "rainfall": 116.0777931,
+              "label": "apple"
+            }
+          ]
+        },
+        {
+          "file_name": "standardized_crops.csv",
+          "relative_path": "crop_dataset\\standardized_crops.csv",
+          "file_size_bytes": 421393,
+          "status": "SUCCESS",
+          "row_count": 6596,
+          "column_count": 8,
+          "columns": [
+            {
+              "name": "N",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 139,
+              "stats": {
+                "min": 0,
+                "max": 180,
+                "mean": 65.33489993935719,
+                "std": 45.431015123013694
+              }
+            },
+            {
+              "name": "P",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 118,
+              "stats": {
+                "min": 5,
+                "max": 145,
+                "mean": 48.164493632504545,
+                "std": 23.699350523273385
+              }
+            },
+            {
+              "name": "K",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 80,
+              "stats": {
+                "min": 5,
+                "max": 205,
+                "mean": 50.29002425712553,
+                "std": 39.81288719621547
+              }
+            },
+            {
+              "name": "temperature",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2296,
+              "stats": {
+                "min": 1.18,
+                "max": 43.67549305,
+                "mean": 25.397239546870075,
+                "std": 5.052872582501118
+              }
+            },
+            {
+              "name": "humidity",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 5292,
+              "stats": {
+                "min": 14.25803981,
+                "max": 99.98187601,
+                "mean": 73.40718536451031,
+                "std": 17.588424612484314
+              }
+            },
+            {
+              "name": "ph",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2282,
+              "stats": {
+                "min": 3.504752314,
+                "max": 9.93509073,
+                "mean": 5.8627995972656155,
+                "std": 0.7561411864049804
+              }
+            },
+            {
+              "name": "rainfall",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2297,
+              "stats": {
+                "min": 3.274569,
+                "max": 3322.06,
+                "mean": 531.003575531184,
+                "std": 599.9895286397489
+              }
+            },
+            {
+              "name": "label",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 51,
+              "top_categories": {
+                "Potato (Aloo)": 461,
+                "Onion (Pyaaz)": 383,
+                "Jowar (Sorghum)": 367,
+                "Sunflower (Surajmukhi)": 362,
+                "Rapeseed (Sarson)": 361
+              }
+            }
+          ],
+          "missing_cells": 0,
+          "duplicate_rows": 0,
+          "sample_rows": [
+            {
+              "N": 24,
+              "P": 128,
+              "K": 196,
+              "temperature": 22.75088787,
+              "humidity": 90.69489172,
+              "ph": 5.521466996,
+              "rainfall": 110.4317855,
+              "label": "Apple"
+            },
+            {
+              "N": 7,
+              "P": 144,
+              "K": 197,
+              "temperature": 23.8494014,
+              "humidity": 94.34814995,
+              "ph": 6.133220586,
+              "rainfall": 114.0512495,
+              "label": "Apple"
+            },
+            {
+              "N": 14,
+              "P": 128,
+              "K": 205,
+              "temperature": 22.60800988,
+              "humidity": 94.58900601,
+              "ph": 6.226289556,
+              "rainfall": 116.0396587,
+              "label": "Apple"
+            },
+            {
+              "N": 8,
+              "P": 120,
+              "K": 201,
+              "temperature": 21.18667419,
+              "humidity": 91.13435689,
+              "ph": 6.321152192,
+              "rainfall": 122.233323,
+              "label": "Apple"
+            },
+            {
+              "N": 20,
+              "P": 129,
+              "K": 201,
+              "temperature": 23.41044706,
+              "humidity": 91.69913296,
+              "ph": 5.587905967,
+              "rainfall": 116.0777931,
+              "label": "Apple"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_id": "crop_npk",
+      "handle": "javakhan/crops-npk-data-set",
+      "domain": "Soil NPK Nutrient Ratios for Crops",
+      "folder": "crop_npk",
+      "status": "INSPECTED",
+      "total_files": 1,
+      "total_rows": 20000,
+      "files": [
+        {
+          "file_name": "sensor_Crop_Dataset (1).csv",
+          "relative_path": "crop_npk\\sensor_Crop_Dataset (1).csv",
+          "file_size_bytes": 2957302,
+          "status": "SUCCESS",
+          "row_count": 20000,
+          "column_count": 10,
+          "columns": [
+            {
+              "name": "Nitrogen",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 20000,
+              "stats": {
+                "min": 5.006012866840484,
+                "max": 149.99878518342774,
+                "mean": 77.21696497196254,
+                "std": 41.85766334554436
+              }
+            },
+            {
+              "name": "Phosphorus",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 20000,
+              "stats": {
+                "min": 5.00048266291821,
+                "max": 89.99908577133665,
+                "mean": 47.48207002352413,
+                "std": 24.58750619589999
+              }
+            },
+            {
+              "name": "Potassium",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 20000,
+              "stats": {
+                "min": 10.000672162993624,
+                "max": 99.99648016878344,
+                "mean": 55.162955628148886,
+                "std": 25.96909099233186
+              }
+            },
+            {
+              "name": "Temperature",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 20000,
+              "stats": {
+                "min": 10.003760301707745,
+                "max": 44.99740660403642,
+                "mean": 27.420717197846876,
+                "std": 10.010144376865496
+              }
+            },
+            {
+              "name": "Humidity",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 20000,
+              "stats": {
+                "min": 30.002297299051985,
+                "max": 99.99234596316742,
+                "mean": 64.89775347496001,
+                "std": 20.20068697818408
+              }
+            },
+            {
+              "name": "pH_Value",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 20000,
+              "stats": {
+                "min": 4.500081928680524,
+                "max": 8.499914488422238,
+                "mean": 6.49612574762944,
+                "std": 1.15574960911541
+              }
+            },
+            {
+              "name": "Rainfall",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 20000,
+              "stats": {
+                "min": 20.01899056663464,
+                "max": 399.9749153152905,
+                "mean": 211.12400154891665,
+                "std": 109.72497318796403
+              }
+            },
+            {
+              "name": "Crop",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 6,
+              "top_categories": {
+                "Wheat": 3390,
+                "Potato": 3362,
+                "Maize": 3352,
+                "Tomato": 3344,
+                "Sugarcane": 3284
+              }
+            },
+            {
+              "name": "Soil_Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 6,
+              "top_categories": {
+                "Silt": 3422,
+                "Clay": 3401,
+                "Saline": 3365,
+                "Sandy": 3312,
+                "Peaty": 3291
+              }
+            },
+            {
+              "name": "Variety",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 18,
+              "top_categories": {
+                "Durum": 1162,
+                "Russet": 1148,
+                "Sweet": 1141,
+                "Roma": 1138,
+                "Hard Red": 1135
+              }
+            }
+          ],
+          "missing_cells": 0,
+          "duplicate_rows": 0,
+          "sample_rows": [
+            {
+              "Nitrogen": 69.0747657352742,
+              "Phosphorus": 53.9544020870548,
+              "Potassium": 88.0676247040119,
+              "Temperature": 17.261833738526974,
+              "Humidity": 72.9416522440957,
+              "pH_Value": 4.631301284674626,
+              "Rainfall": 302.84263899578417,
+              "Crop": "Wheat",
+              "Soil_Type": "Clay",
+              "Variety": "Soft Red"
+            },
+            {
+              "Nitrogen": 107.32935206465484,
+              "Phosphorus": 70.10213389904699,
+              "Potassium": 32.08106652927613,
+              "Temperature": 21.84611565724149,
+              "Humidity": 99.36195448548068,
+              "pH_Value": 4.761658350431389,
+              "Rainfall": 94.69384657075958,
+              "Crop": "Tomato",
+              "Soil_Type": "Clay",
+              "Variety": "Beefsteak"
+            },
+            {
+              "Nitrogen": 130.63462407096128,
+              "Phosphorus": 67.20453317483934,
+              "Potassium": 28.29425168407002,
+              "Temperature": 33.24689514937074,
+              "Humidity": 81.50683564100116,
+              "pH_Value": 6.5660070585641614,
+              "Rainfall": 83.563684651297,
+              "Crop": "Sugarcane",
+              "Soil_Type": "Clay",
+              "Variety": "Co 86032"
+            },
+            {
+              "Nitrogen": 15.169301216191364,
+              "Phosphorus": 87.49318129429336,
+              "Potassium": 14.336678966117727,
+              "Temperature": 14.396288866165008,
+              "Humidity": 59.27446469091534,
+              "pH_Value": 6.296296654755076,
+              "Rainfall": 31.508835824717632,
+              "Crop": "Sugarcane",
+              "Soil_Type": "Silt",
+              "Variety": "Co 0238"
+            },
+            {
+              "Nitrogen": 21.88196508475118,
+              "Phosphorus": 89.26971210568172,
+              "Potassium": 38.833885318797634,
+              "Temperature": 16.77321764398873,
+              "Humidity": 51.19158384861472,
+              "pH_Value": 8.268274387750605,
+              "Rainfall": 295.1934818585424,
+              "Crop": "Maize",
+              "Soil_Type": "Sandy",
+              "Variety": "Sweet"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_id": "fertilizer",
+      "handle": "sanketgondaliya/fertilizer",
+      "domain": "Fertilizer Chemical Composition & Dosage",
+      "folder": "fertilizer",
+      "status": "INSPECTED",
+      "total_files": 1,
+      "total_rows": 99,
+      "files": [
+        {
+          "file_name": "Fertilizer Prediction.csv",
+          "relative_path": "fertilizer\\Fertilizer Prediction.csv",
+          "file_size_bytes": 3857,
+          "status": "SUCCESS",
+          "row_count": 99,
+          "column_count": 9,
+          "columns": [
+            {
+              "name": "Temparature",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 14,
+              "stats": {
+                "min": 25,
+                "max": 38,
+                "mean": 30.282828282828284,
+                "std": 3.502303626857917
+              }
+            },
+            {
+              "name": "Humidity ",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 13,
+              "stats": {
+                "min": 50,
+                "max": 72,
+                "mean": 59.15151515151515,
+                "std": 5.840330638466013
+              }
+            },
+            {
+              "name": "Moisture",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 41,
+              "stats": {
+                "min": 25,
+                "max": 65,
+                "mean": 43.18181818181818,
+                "std": 11.271567658352094
+              }
+            },
+            {
+              "name": "Soil Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 5,
+              "top_categories": {
+                "Loamy": 21,
+                "Sandy": 20,
+                "Clayey": 20,
+                "Black": 19,
+                "Red": 19
+              }
+            },
+            {
+              "name": "Crop Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 11,
+              "top_categories": {
+                "Sugarcane": 13,
+                "Cotton": 12,
+                "Millets": 11,
+                "Paddy": 10,
+                "Pulses": 10
+              }
+            },
+            {
+              "name": "Nitrogen",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 24,
+              "stats": {
+                "min": 4,
+                "max": 42,
+                "mean": 18.90909090909091,
+                "std": 11.599692913854781
+              }
+            },
+            {
+              "name": "Potassium",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 13,
+              "stats": {
+                "min": 0,
+                "max": 19,
+                "mean": 3.3838383838383836,
+                "std": 5.814666661277922
+              }
+            },
+            {
+              "name": "Phosphorous",
+              "dtype": "int64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 32,
+              "stats": {
+                "min": 0,
+                "max": 42,
+                "mean": 18.606060606060606,
+                "std": 13.476978240172585
+              }
+            },
+            {
+              "name": "Fertilizer Name",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 7,
+              "top_categories": {
+                "Urea": 22,
+                "DAP": 18,
+                "28-28": 17,
+                "14-35-14": 14,
+                "20-20": 14
+              }
+            }
+          ],
+          "missing_cells": 0,
+          "duplicate_rows": 0,
+          "sample_rows": [
+            {
+              "Temparature": 26,
+              "Humidity ": 52,
+              "Moisture": 38,
+              "Soil Type": "Sandy",
+              "Crop Type": "Maize",
+              "Nitrogen": 37,
+              "Potassium": 0,
+              "Phosphorous": 0,
+              "Fertilizer Name": "Urea"
+            },
+            {
+              "Temparature": 29,
+              "Humidity ": 52,
+              "Moisture": 45,
+              "Soil Type": "Loamy",
+              "Crop Type": "Sugarcane",
+              "Nitrogen": 12,
+              "Potassium": 0,
+              "Phosphorous": 36,
+              "Fertilizer Name": "DAP"
+            },
+            {
+              "Temparature": 34,
+              "Humidity ": 65,
+              "Moisture": 62,
+              "Soil Type": "Black",
+              "Crop Type": "Cotton",
+              "Nitrogen": 7,
+              "Potassium": 9,
+              "Phosphorous": 30,
+              "Fertilizer Name": "14-35-14"
+            },
+            {
+              "Temparature": 32,
+              "Humidity ": 62,
+              "Moisture": 34,
+              "Soil Type": "Red",
+              "Crop Type": "Tobacco",
+              "Nitrogen": 22,
+              "Potassium": 0,
+              "Phosphorous": 20,
+              "Fertilizer Name": "28-28"
+            },
+            {
+              "Temparature": 28,
+              "Humidity ": 54,
+              "Moisture": 46,
+              "Soil Type": "Clayey",
+              "Crop Type": "Paddy",
+              "Nitrogen": 35,
+              "Potassium": 0,
+              "Phosphorous": 0,
+              "Fertilizer Name": "Urea"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_id": "nutrient_loss",
+      "handle": "ziya07/agricultural-nutrient-loss-dataset",
+      "domain": "Agricultural Runoff & Soil Nutrient Loss",
+      "folder": "nutrient_loss",
+      "status": "INSPECTED",
+      "total_files": 2,
+      "total_rows": 30000,
+      "files": [
+        {
+          "file_name": "AgroFertilizerLoss.csv",
+          "relative_path": "nutrient_loss\\AgroFertilizerLoss.csv",
+          "file_size_bytes": 2361176,
+          "status": "SUCCESS",
+          "row_count": 15000,
+          "column_count": 26,
+          "columns": [
+            {
+              "name": "Crop_Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 5,
+              "top_categories": {
+                "Vegetable": 3061,
+                "Wheat": 3033,
+                "Citrus": 3022,
+                "Rice": 3000,
+                "Corn": 2884
+              }
+            },
+            {
+              "name": "Soil_Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3,
+              "top_categories": {
+                "Sandy": 5007,
+                "Loamy": 4998,
+                "Clay": 4995
+              }
+            },
+            {
+              "name": "Soil_pH",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 301,
+              "stats": {
+                "min": 5.5,
+                "max": 8.5,
+                "mean": 7.001966666666666,
+                "std": 0.8650612199625957
+              }
+            },
+            {
+              "name": "Soil_Organic_Carbon",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 201,
+              "stats": {
+                "min": 0.5,
+                "max": 2.5,
+                "mean": 1.5046006666666667,
+                "std": 0.5776126524681642
+              }
+            },
+            {
+              "name": "Total_Nitrogen",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 11264,
+              "stats": {
+                "min": 50.01,
+                "max": 299.97,
+                "mean": 176.25425866666666,
+                "std": 72.36630552392532
+              }
+            },
+            {
+              "name": "Available_Phosphorus",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 6150,
+              "stats": {
+                "min": 10.01,
+                "max": 79.99,
+                "mean": 44.92163,
+                "std": 20.256371493158344
+              }
+            },
+            {
+              "name": "Available_Potassium",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 12203,
+              "stats": {
+                "min": 50.12,
+                "max": 399.97,
+                "mean": 224.70067799999998,
+                "std": 100.54228218506272
+              }
+            },
+            {
+              "name": "Bulk_Density",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 51,
+              "stats": {
+                "min": 1.1,
+                "max": 1.6,
+                "mean": 1.3504,
+                "std": 0.14444479090587284
+              }
+            },
+            {
+              "name": "Rainfall",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 8519,
+              "stats": {
+                "min": 0.03,
+                "max": 119.99,
+                "mean": 59.80626266666666,
+                "std": 34.664654859940214
+              }
+            },
+            {
+              "name": "Temperature",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2488,
+              "stats": {
+                "min": 15.0,
+                "max": 40.0,
+                "mean": 27.43368733333333,
+                "std": 7.200612220128406
+              }
+            },
+            {
+              "name": "Humidity",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 5172,
+              "stats": {
+                "min": 40.0,
+                "max": 95.0,
+                "mean": 67.59753266666667,
+                "std": 15.902410457626345
+              }
+            },
+            {
+              "name": "Wind_Speed",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 551,
+              "stats": {
+                "min": 0.5,
+                "max": 6.0,
+                "mean": 3.2812126666666668,
+                "std": 1.5908247790600323
+              }
+            },
+            {
+              "name": "Evapotranspiration",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 601,
+              "stats": {
+                "min": 2.0,
+                "max": 8.0,
+                "mean": 5.005870666666667,
+                "std": 1.7289950000468195
+              }
+            },
+            {
+              "name": "Soil_Moisture_Level",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3,
+              "top_categories": {
+                "High": 5089,
+                "Low": 5038,
+                "Medium": 4873
+              }
+            },
+            {
+              "name": "Growth_Stage",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3,
+              "top_categories": {
+                "Late": 5057,
+                "Mid": 5013,
+                "Initial": 4930
+              }
+            },
+            {
+              "name": "Fertilizer_Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 5,
+              "top_categories": {
+                "Organic": 3039,
+                "NPK": 3031,
+                "PK": 3027,
+                "Urea": 2979,
+                "NK": 2924
+              }
+            },
+            {
+              "name": "Application_Rate",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 9174,
+              "stats": {
+                "min": 60.0,
+                "max": 200.0,
+                "mean": 130.07379933333334,
+                "std": 40.45342618820344
+              }
+            },
+            {
+              "name": "Application_Method",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3,
+              "top_categories": {
+                "Foliar": 5024,
+                "Drip": 4989,
+                "Broadcast": 4987
+              }
+            },
+            {
+              "name": "Coating_Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3,
+              "top_categories": {
+                "Biochar": 5028,
+                "Normal": 4993,
+                "Controlled_Release": 4979
+              }
+            },
+            {
+              "name": "Irrigation_Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3,
+              "top_categories": {
+                "Flood": 5072,
+                "Drip": 5004,
+                "Sprinkler": 4924
+              }
+            },
+            {
+              "name": "Water_Amount",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 6202,
+              "stats": {
+                "min": 10.0,
+                "max": 79.99,
+                "mean": 45.30988,
+                "std": 20.204856342315022
+              }
+            },
+            {
+              "name": "Total_Fertilizer_Loss_kg_ha",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 4529,
+              "stats": {
+                "min": 13.21,
+                "max": 80.19,
+                "mean": 46.99321866666667,
+                "std": 11.253715674150317
+              }
+            },
+            {
+              "name": "Fertilizer_Loss_Percentage",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 4054,
+              "stats": {
+                "min": 17.66,
+                "max": 88.27,
+                "mean": 38.271866,
+                "std": 10.655758403347962
+              }
+            },
+            {
+              "name": "Nitrogen_Loss",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2486,
+              "stats": {
+                "min": 6.6,
+                "max": 40.1,
+                "mean": 23.496621333333334,
+                "std": 5.62690450024658
+              }
+            },
+            {
+              "name": "Phosphorus_Loss",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 1631,
+              "stats": {
+                "min": 3.96,
+                "max": 24.06,
+                "mean": 14.097863333333335,
+                "std": 3.3761041324673484
+              }
+            },
+            {
+              "name": "Potassium_Loss",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 1131,
+              "stats": {
+                "min": 2.64,
+                "max": 16.04,
+                "mean": 9.398652,
+                "std": 2.250699491145504
+              }
+            }
+          ],
+          "missing_cells": 0,
+          "duplicate_rows": 0,
+          "sample_rows": [
+            {
+              "Crop_Type": "Citrus",
+              "Soil_Type": "Sandy",
+              "Soil_pH": 7.06,
+              "Soil_Organic_Carbon": 2.46,
+              "Total_Nitrogen": 222.8,
+              "Available_Phosphorus": 44.3,
+              "Available_Potassium": 314.76,
+              "Bulk_Density": 1.53,
+              "Rainfall": 57.07,
+              "Temperature": 37.47,
+              "Humidity": 51.49,
+              "Wind_Speed": 4.0,
+              "Evapotranspiration": 4.93,
+              "Soil_Moisture_Level": "Low",
+              "Growth_Stage": "Initial",
+              "Fertilizer_Type": "Urea",
+              "Application_Rate": 195.45,
+              "Application_Method": "Broadcast",
+              "Coating_Type": "Normal",
+              "Irrigation_Type": "Flood",
+              "Water_Amount": 51.16,
+              "Total_Fertilizer_Loss_kg_ha": 53.91,
+              "Fertilizer_Loss_Percentage": 27.58,
+              "Nitrogen_Loss": 26.96,
+              "Phosphorus_Loss": 16.17,
+              "Potassium_Loss": 10.78
+            },
+            {
+              "Crop_Type": "Vegetable",
+              "Soil_Type": "Sandy",
+              "Soil_pH": 8.39,
+              "Soil_Organic_Carbon": 1.3,
+              "Total_Nitrogen": 139.22,
+              "Available_Phosphorus": 48.79,
+              "Available_Potassium": 170.3,
+              "Bulk_Density": 1.35,
+              "Rainfall": 76.07,
+              "Temperature": 29.77,
+              "Humidity": 78.3,
+              "Wind_Speed": 5.21,
+              "Evapotranspiration": 2.41,
+              "Soil_Moisture_Level": "High",
+              "Growth_Stage": "Initial",
+              "Fertilizer_Type": "NK",
+              "Application_Rate": 125.4,
+              "Application_Method": "Broadcast",
+              "Coating_Type": "Controlled_Release",
+              "Irrigation_Type": "Flood",
+              "Water_Amount": 12.02,
+              "Total_Fertilizer_Loss_kg_ha": 51.33,
+              "Fertilizer_Loss_Percentage": 40.93,
+              "Nitrogen_Loss": 25.66,
+              "Phosphorus_Loss": 15.4,
+              "Potassium_Loss": 10.27
+            },
+            {
+              "Crop_Type": "Corn",
+              "Soil_Type": "Loamy",
+              "Soil_pH": 6.35,
+              "Soil_Organic_Carbon": 1.13,
+              "Total_Nitrogen": 144.2,
+              "Available_Phosphorus": 13.77,
+              "Available_Potassium": 325.65,
+              "Bulk_Density": 1.15,
+              "Rainfall": 56.57,
+              "Temperature": 28.47,
+              "Humidity": 78.38,
+              "Wind_Speed": 3.68,
+              "Evapotranspiration": 7.72,
+              "Soil_Moisture_Level": "High",
+              "Growth_Stage": "Mid",
+              "Fertilizer_Type": "Organic",
+              "Application_Rate": 194.3,
+              "Application_Method": "Broadcast",
+              "Coating_Type": "Controlled_Release",
+              "Irrigation_Type": "Drip",
+              "Water_Amount": 41.37,
+              "Total_Fertilizer_Loss_kg_ha": 59.63,
+              "Fertilizer_Loss_Percentage": 30.69,
+              "Nitrogen_Loss": 29.82,
+              "Phosphorus_Loss": 17.89,
+              "Potassium_Loss": 11.93
+            },
+            {
+              "Crop_Type": "Vegetable",
+              "Soil_Type": "Loamy",
+              "Soil_pH": 7.78,
+              "Soil_Organic_Carbon": 1.34,
+              "Total_Nitrogen": 77.47,
+              "Available_Phosphorus": 46.86,
+              "Available_Potassium": 335.65,
+              "Bulk_Density": 1.56,
+              "Rainfall": 49.52,
+              "Temperature": 29.88,
+              "Humidity": 92.83,
+              "Wind_Speed": 3.1,
+              "Evapotranspiration": 7.31,
+              "Soil_Moisture_Level": "High",
+              "Growth_Stage": "Initial",
+              "Fertilizer_Type": "NK",
+              "Application_Rate": 137.36,
+              "Application_Method": "Broadcast",
+              "Coating_Type": "Biochar",
+              "Irrigation_Type": "Sprinkler",
+              "Water_Amount": 19.51,
+              "Total_Fertilizer_Loss_kg_ha": 45.56,
+              "Fertilizer_Loss_Percentage": 33.17,
+              "Nitrogen_Loss": 22.78,
+              "Phosphorus_Loss": 13.67,
+              "Potassium_Loss": 9.11
+            },
+            {
+              "Crop_Type": "Vegetable",
+              "Soil_Type": "Sandy",
+              "Soil_pH": 7.22,
+              "Soil_Organic_Carbon": 0.73,
+              "Total_Nitrogen": 296.02,
+              "Available_Phosphorus": 33.51,
+              "Available_Potassium": 396.88,
+              "Bulk_Density": 1.29,
+              "Rainfall": 76.41,
+              "Temperature": 33.82,
+              "Humidity": 86.95,
+              "Wind_Speed": 4.2,
+              "Evapotranspiration": 5.62,
+              "Soil_Moisture_Level": "Low",
+              "Growth_Stage": "Late",
+              "Fertilizer_Type": "Organic",
+              "Application_Rate": 122.45,
+              "Application_Method": "Foliar",
+              "Coating_Type": "Biochar",
+              "Irrigation_Type": "Flood",
+              "Water_Amount": 48.33,
+              "Total_Fertilizer_Loss_kg_ha": 51.32,
+              "Fertilizer_Loss_Percentage": 41.91,
+              "Nitrogen_Loss": 25.66,
+              "Phosphorus_Loss": 15.4,
+              "Potassium_Loss": 10.26
+            }
+          ]
+        },
+        {
+          "file_name": "AgroFertilizerLossF.csv",
+          "relative_path": "nutrient_loss\\AgroFertilizerLossF.csv",
+          "file_size_bytes": 2397096,
+          "status": "SUCCESS",
+          "row_count": 15000,
+          "column_count": 27,
+          "columns": [
+            {
+              "name": "Crop_Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 5,
+              "top_categories": {
+                "Vegetable": 3061,
+                "Wheat": 3033,
+                "Citrus": 3022,
+                "Rice": 3000,
+                "Corn": 2884
+              }
+            },
+            {
+              "name": "Soil_Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3,
+              "top_categories": {
+                "Sandy": 5007,
+                "Loamy": 4998,
+                "Clay": 4995
+              }
+            },
+            {
+              "name": "Soil_pH",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 301,
+              "stats": {
+                "min": 5.5,
+                "max": 8.5,
+                "mean": 7.001966666666666,
+                "std": 0.8650612199625957
+              }
+            },
+            {
+              "name": "Soil_Organic_Carbon",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 201,
+              "stats": {
+                "min": 0.5,
+                "max": 2.5,
+                "mean": 1.5046006666666667,
+                "std": 0.5776126524681642
+              }
+            },
+            {
+              "name": "Total_Nitrogen",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 11264,
+              "stats": {
+                "min": 50.01,
+                "max": 299.97,
+                "mean": 176.25425866666666,
+                "std": 72.36630552392532
+              }
+            },
+            {
+              "name": "Available_Phosphorus",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 6150,
+              "stats": {
+                "min": 10.01,
+                "max": 79.99,
+                "mean": 44.92163,
+                "std": 20.256371493158344
+              }
+            },
+            {
+              "name": "Available_Potassium",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 12203,
+              "stats": {
+                "min": 50.12,
+                "max": 399.97,
+                "mean": 224.70067799999998,
+                "std": 100.54228218506272
+              }
+            },
+            {
+              "name": "Bulk_Density",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 51,
+              "stats": {
+                "min": 1.1,
+                "max": 1.6,
+                "mean": 1.3504,
+                "std": 0.14444479090587284
+              }
+            },
+            {
+              "name": "Rainfall",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 8519,
+              "stats": {
+                "min": 0.03,
+                "max": 119.99,
+                "mean": 59.80626266666666,
+                "std": 34.664654859940214
+              }
+            },
+            {
+              "name": "Temperature",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2488,
+              "stats": {
+                "min": 15.0,
+                "max": 40.0,
+                "mean": 27.43368733333333,
+                "std": 7.200612220128406
+              }
+            },
+            {
+              "name": "Humidity",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 5172,
+              "stats": {
+                "min": 40.0,
+                "max": 95.0,
+                "mean": 67.59753266666667,
+                "std": 15.902410457626345
+              }
+            },
+            {
+              "name": "Wind_Speed",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 551,
+              "stats": {
+                "min": 0.5,
+                "max": 6.0,
+                "mean": 3.2812126666666668,
+                "std": 1.5908247790600323
+              }
+            },
+            {
+              "name": "Evapotranspiration",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 601,
+              "stats": {
+                "min": 2.0,
+                "max": 8.0,
+                "mean": 5.005870666666667,
+                "std": 1.7289950000468195
+              }
+            },
+            {
+              "name": "Soil_Moisture_Level",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3,
+              "top_categories": {
+                "High": 5089,
+                "Low": 5038,
+                "Medium": 4873
+              }
+            },
+            {
+              "name": "Growth_Stage",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3,
+              "top_categories": {
+                "Late": 5057,
+                "Mid": 5013,
+                "Initial": 4930
+              }
+            },
+            {
+              "name": "Fertilizer_Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 4,
+              "top_categories": {
+                "NPK": 3797,
+                "Urea": 3749,
+                "NK": 3737,
+                "PK": 3717
+              }
+            },
+            {
+              "name": "Fertilizer_Treatment",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2,
+              "top_categories": {
+                "CF": 7583,
+                "OF": 7417
+              }
+            },
+            {
+              "name": "Application_Rate",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 9182,
+              "stats": {
+                "min": 60.0,
+                "max": 199.99,
+                "mean": 130.51189066666666,
+                "std": 40.41339881820115
+              }
+            },
+            {
+              "name": "Application_Method",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3,
+              "top_categories": {
+                "Foliar": 5047,
+                "Broadcast": 5008,
+                "Drip": 4945
+              }
+            },
+            {
+              "name": "Coating_Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3,
+              "top_categories": {
+                "Biochar": 5024,
+                "Normal": 5013,
+                "Controlled_Release": 4963
+              }
+            },
+            {
+              "name": "Irrigation_Type",
+              "dtype": "str",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 3,
+              "top_categories": {
+                "Drip": 5030,
+                "Flood": 5015,
+                "Sprinkler": 4955
+              }
+            },
+            {
+              "name": "Water_Amount",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 6200,
+              "stats": {
+                "min": 10.0,
+                "max": 79.99,
+                "mean": 44.81991266666666,
+                "std": 20.292463195397005
+              }
+            },
+            {
+              "name": "Total_Fertilizer_Loss_kg_ha",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 4524,
+              "stats": {
+                "min": 18.92,
+                "max": 85.07,
+                "mean": 52.06668466666667,
+                "std": 11.258177447490965
+              }
+            },
+            {
+              "name": "Fertilizer_Loss_Percentage",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 4353,
+              "stats": {
+                "min": 20.69,
+                "max": 95.87,
+                "mean": 42.459293333333335,
+                "std": 11.675532462283712
+              }
+            },
+            {
+              "name": "Nitrogen_Loss",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 2492,
+              "stats": {
+                "min": 9.46,
+                "max": 42.54,
+                "mean": 26.033296000000004,
+                "std": 5.629062156265578
+              }
+            },
+            {
+              "name": "Phosphorus_Loss",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 1641,
+              "stats": {
+                "min": 5.68,
+                "max": 25.52,
+                "mean": 15.619924000000001,
+                "std": 3.3774339981093298
+              }
+            },
+            {
+              "name": "Potassium_Loss",
+              "dtype": "float64",
+              "null_count": 0,
+              "null_percentage": 0.0,
+              "unique_count": 1139,
+              "stats": {
+                "min": 3.78,
+                "max": 17.01,
+                "mean": 10.413339333333335,
+                "std": 2.2516057375599123
+              }
+            }
+          ],
+          "missing_cells": 0,
+          "duplicate_rows": 0,
+          "sample_rows": [
+            {
+              "Crop_Type": "Citrus",
+              "Soil_Type": "Sandy",
+              "Soil_pH": 7.06,
+              "Soil_Organic_Carbon": 2.46,
+              "Total_Nitrogen": 222.8,
+              "Available_Phosphorus": 44.3,
+              "Available_Potassium": 314.76,
+              "Bulk_Density": 1.53,
+              "Rainfall": 57.07,
+              "Temperature": 37.47,
+              "Humidity": 51.49,
+              "Wind_Speed": 4.0,
+              "Evapotranspiration": 4.93,
+              "Soil_Moisture_Level": "Low",
+              "Growth_Stage": "Initial",
+              "Fertilizer_Type": "Urea",
+              "Fertilizer_Treatment": "CF",
+              "Application_Rate": 72.56,
+              "Application_Method": "Foliar",
+              "Coating_Type": "Normal",
+              "Irrigation_Type": "Flood",
+              "Water_Amount": 68.46,
+              "Total_Fertilizer_Loss_kg_ha": 38.96,
+              "Fertilizer_Loss_Percentage": 53.69,
+              "Nitrogen_Loss": 19.48,
+              "Phosphorus_Loss": 11.69,
+              "Potassium_Loss": 7.79
+            },
+            {
+              "Crop_Type": "Vegetable",
+              "Soil_Type": "Sandy",
+              "Soil_pH": 8.39,
+              "Soil_Organic_Carbon": 1.3,
+              "Total_Nitrogen": 139.22,
+              "Available_Phosphorus": 48.79,
+              "Available_Potassium": 170.3,
+              "Bulk_Density": 1.35,
+              "Rainfall": 76.07,
+              "Temperature": 29.77,
+              "Humidity": 78.3,
+              "Wind_Speed": 5.21,
+              "Evapotranspiration": 2.41,
+              "Soil_Moisture_Level": "High",
+              "Growth_Stage": "Initial",
+              "Fertilizer_Type": "NK",
+              "Fertilizer_Treatment": "OF",
+              "Application_Rate": 198.86,
+              "Application_Method": "Drip",
+              "Coating_Type": "Controlled_Release",
+              "Irrigation_Type": "Sprinkler",
+              "Water_Amount": 40.62,
+              "Total_Fertilizer_Loss_kg_ha": 66.44,
+              "Fertilizer_Loss_Percentage": 33.41,
+              "Nitrogen_Loss": 33.22,
+              "Phosphorus_Loss": 19.93,
+              "Potassium_Loss": 13.29
+            },
+            {
+              "Crop_Type": "Corn",
+              "Soil_Type": "Loamy",
+              "Soil_pH": 6.35,
+              "Soil_Organic_Carbon": 1.13,
+              "Total_Nitrogen": 144.2,
+              "Available_Phosphorus": 13.77,
+              "Available_Potassium": 325.65,
+              "Bulk_Density": 1.15,
+              "Rainfall": 56.57,
+              "Temperature": 28.47,
+              "Humidity": 78.38,
+              "Wind_Speed": 3.68,
+              "Evapotranspiration": 7.72,
+              "Soil_Moisture_Level": "High",
+              "Growth_Stage": "Mid",
+              "Fertilizer_Type": "NPK",
+              "Fertilizer_Treatment": "CF",
+              "Application_Rate": 133.81,
+              "Application_Method": "Foliar",
+              "Coating_Type": "Normal",
+              "Irrigation_Type": "Sprinkler",
+              "Water_Amount": 69.87,
+              "Total_Fertilizer_Loss_kg_ha": 60.37,
+              "Fertilizer_Loss_Percentage": 45.12,
+              "Nitrogen_Loss": 30.18,
+              "Phosphorus_Loss": 18.11,
+              "Potassium_Loss": 12.07
+            },
+            {
+              "Crop_Type": "Vegetable",
+              "Soil_Type": "Loamy",
+              "Soil_pH": 7.78,
+              "Soil_Organic_Carbon": 1.34,
+              "Total_Nitrogen": 77.47,
+              "Available_Phosphorus": 46.86,
+              "Available_Potassium": 335.65,
+              "Bulk_Density": 1.56,
+              "Rainfall": 49.52,
+              "Temperature": 29.88,
+              "Humidity": 92.83,
+              "Wind_Speed": 3.1,
+              "Evapotranspiration": 7.31,
+              "Soil_Moisture_Level": "High",
+              "Growth_Stage": "Initial",
+              "Fertilizer_Type": "NK",
+              "Fertilizer_Treatment": "OF",
+              "Application_Rate": 96.18,
+              "Application_Method": "Foliar",
+              "Coating_Type": "Normal",
+              "Irrigation_Type": "Sprinkler",
+              "Water_Amount": 74.32,
+              "Total_Fertilizer_Loss_kg_ha": 46.84,
+              "Fertilizer_Loss_Percentage": 48.7,
+              "Nitrogen_Loss": 23.42,
+              "Phosphorus_Loss": 14.05,
+              "Potassium_Loss": 9.37
+            },
+            {
+              "Crop_Type": "Vegetable",
+              "Soil_Type": "Sandy",
+              "Soil_pH": 7.22,
+              "Soil_Organic_Carbon": 0.73,
+              "Total_Nitrogen": 296.02,
+              "Available_Phosphorus": 33.51,
+              "Available_Potassium": 396.88,
+              "Bulk_Density": 1.29,
+              "Rainfall": 76.41,
+              "Temperature": 33.82,
+              "Humidity": 86.95,
+              "Wind_Speed": 4.2,
+              "Evapotranspiration": 5.62,
+              "Soil_Moisture_Level": "Low",
+              "Growth_Stage": "Late",
+              "Fertilizer_Type": "NPK",
+              "Fertilizer_Treatment": "OF",
+              "Application_Rate": 92.85,
+              "Application_Method": "Foliar",
+              "Coating_Type": "Normal",
+              "Irrigation_Type": "Drip",
+              "Water_Amount": 10.06,
+              "Total_Fertilizer_Loss_kg_ha": 50.5,
+              "Fertilizer_Loss_Percentage": 54.39,
+              "Nitrogen_Loss": 25.25,
+              "Phosphorus_Loss": 15.15,
+              "Potassium_Loss": 10.1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_datasets": 12,
+    "total_data_files": 14,
+    "total_ingested_rows": 186676,
+    "status": "COMPLETE"
+  }
+}
